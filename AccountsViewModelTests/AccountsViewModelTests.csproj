@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+      <TargetFramework>netcoreapp7.0</TargetFramework>
+      <Nullable>enable</Nullable>
+      <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services.Tests\GetAccountDetailsForTransactionServiceTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="AutoFixture" Version="4.17.0" />
+    <PackageReference Include="AutoFixture.AutoMoq" Version="4.17.0" />
+    <PackageReference Include="AutoFixture.Xunit2" Version="4.17.0" />
+    <PackageReference Include="FluentAssertions" Version="6.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.6" />
+    <PackageReference Include="Moq" Version="4.18.1" />
+    <PackageReference Include="Unity.Abstractions" Version="5.11.7" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+            </PackageReference>
+     <PackageReference Include="coverlet.collector" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\AccountsModelCore\AccountsModelCore.csproj" />
+    <ProjectReference Include="..\AccountsEntityFrameworkCore\AccountsEntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\ImageServices\ImageServices.csproj" />
+    <ProjectReference Include="..\AccountsViewModel\AccountsViewModel.csproj" />
+  </ItemGroup>
+</Project>
