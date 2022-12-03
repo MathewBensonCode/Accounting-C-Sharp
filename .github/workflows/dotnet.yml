@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build AccountsViewModelTests/ --no-restore
+      run: dotnet build AccountsViewModelTests/AccountsViewModelTests.csproj --no-restore
     - name: Test
-      run: dotnet test AccountsViewModelTests/ --no-build --verbosity normal
+      run: dotnet test AccountsViewModelTests/AccountsViewModelTests.csproj --no-build --verbosity normal
