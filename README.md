@@ -1,3 +1,5 @@
+[![.NET](https://github.com/MathewBensonCode/Accounting-C-Sharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MathewBensonCode/Accounting-C-Sharp/actions/workflows/dotnet.yml)
+
 # Accounting-C-Sharp
 
 This is an implementation of an accounting application whose purpose is to obtain business source documents, scan them with OCR and obtain the textual representation of the documents. The text data is then to be processed based on regular expressions to classify it and store it in a database.
