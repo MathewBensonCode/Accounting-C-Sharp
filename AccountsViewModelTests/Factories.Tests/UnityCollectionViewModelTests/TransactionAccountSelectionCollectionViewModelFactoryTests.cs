@@ -1,26 +1,25 @@
-using Xunit;
-using Moq;
-using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
-using Unity;
-using AccountsViewModel.Factories;
-using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountLib.Model.Accounts;
 using System;
-using AccountLib.Interfaces.Transactions;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Interfaces.Transactions;
+using AccountsViewModel.CollectionViewModels.Interfaces;
+using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
+using AccountsViewModel.Factories.Unity.CollectionViewModelFactories;
+using Moq;
+using Unity;
+using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests
 {
     public class TransactionAccountSelectionCollectionViewModelFactoryTests
     {
-        Mock<IUnityContainer> container;
-        Mock<IEntityCollectionViewModel<Account>> assetaccountcollectionviewmodel;
-        Mock<IEntityCollectionViewModel<Account>> capitalaccountcollectionviewmodel;
-        Mock<IEntityCollectionViewModel<Account>> currencyaccountcollectionviewmodel;
-        Mock<IEntityCollectionViewModel<Account>> expenseaccountcollectionviewmodel;
-        Mock<IEntityCollectionViewModel<Account>> incomeaccountcollectionviewmodel;
-        Mock<IEntityCollectionViewModel<Account>> liabilityaccountcollectionviewmodel;
-
-        TransactionAccountSelectionCollectionViewModelFactory sut;
+        private readonly Mock<IUnityContainer> container;
+        private readonly Mock<IEntityCollectionViewModel<Account>> assetaccountcollectionviewmodel;
+        private readonly Mock<IEntityCollectionViewModel<Account>> capitalaccountcollectionviewmodel;
+        private readonly Mock<IEntityCollectionViewModel<Account>> currencyaccountcollectionviewmodel;
+        private readonly Mock<IEntityCollectionViewModel<Account>> expenseaccountcollectionviewmodel;
+        private readonly Mock<IEntityCollectionViewModel<Account>> incomeaccountcollectionviewmodel;
+        private readonly Mock<IEntityCollectionViewModel<Account>> liabilityaccountcollectionviewmodel;
+        private readonly TransactionAccountSelectionCollectionViewModelFactory sut;
 
         public TransactionAccountSelectionCollectionViewModelFactoryTests()
         {
@@ -44,7 +43,6 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
                 .Returns(incomeaccountcollectionviewmodel.Object);
             container.Setup(a => a.Resolve(typeof(IEntityCollectionViewModel<LiabilityAccount>), null, null))
                 .Returns(liabilityaccountcollectionviewmodel.Object);
-           
 
             sut = new TransactionAccountSelectionCollectionViewModelFactory(
                     container.Object
@@ -70,7 +68,7 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
             Assert.Throws<ArgumentNullException>(() => { sut.GetCreditAccountCollectionViewModelForTransaction(null); });
         }
 
-       //Asset Purchase Transaction
+        //Asset Purchase Transaction
         [Fact]
         public void ShouldCreateAssetDebitAccountCollectionViewModelForAssetPurchaseTransaction()
         {
@@ -196,8 +194,6 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
             var transaction = new Mock<ILiabilityIncreaseTransaction>();
             Assert.Same(liabilityaccountcollectionviewmodel.Object, sut.GetCreditAccountCollectionViewModelForTransaction(transaction.Object));
         }
-
-
 
     }
 }

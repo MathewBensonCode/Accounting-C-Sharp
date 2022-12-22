@@ -1,6 +1,6 @@
-using AccountsViewModelsCore.Services.Interfaces;
-using Prism.Commands;
 using AccountsViewModel.EntityViewModels.Interfaces;
+using ImageServices.Services.Interfaces;
+using Prism.Commands;
 
 namespace AccountsViewModel.CommandViewModels.ImageCommands
 {

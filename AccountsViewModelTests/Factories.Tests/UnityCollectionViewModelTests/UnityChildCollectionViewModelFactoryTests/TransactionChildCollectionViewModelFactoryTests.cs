@@ -1,28 +1,27 @@
-﻿using AccountLib.Model.Transactions;
-using Accounts.Repositories;
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Interfaces.SourceDocuments;
-using AutoFixture.Xunit2;
+﻿using AccountsViewModel.Repositories.Interfaces;
 using Moq;
 using System.Collections.Generic;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Unity.CollectionViewModelFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
 using Xunit;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.SourceDocuments;
+using AccountsModelCore.Interfaces.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
 {
     public class TransactionChildCollectionViewModelFactoryTests
     {
-        Mock<IRepository<Transaction>> repository;
-        Mock<ICollectionViewModelFactory<Transaction>> collectionviewmodelfactory;
-        Mock<IAccount> account;
-        Mock<ISourceDocument> sourcedocument;
-        Mock<ICollection<Transaction>> transactioncollection;
-        Mock<IEntityCollectionViewModel<Transaction>> transactioncollectionviewmodel;
+        private readonly Mock<IRepository<Transaction>> repository;
+        private readonly Mock<ICollectionViewModelFactory<Transaction>> collectionviewmodelfactory;
+        private readonly Mock<IAccount> account;
+        private readonly Mock<ISourceDocument> sourcedocument;
+        private readonly Mock<ICollection<Transaction>> transactioncollection;
+        private readonly Mock<IEntityCollectionViewModel<Transaction>> transactioncollectionviewmodel;
 
-        TransactionChildCollectionViewModelFactory sut;
+        private readonly TransactionChildCollectionViewModelFactory sut;
+
         public TransactionChildCollectionViewModelFactoryTests()
         {
             repository = new Mock<IRepository<Transaction>>();
@@ -56,13 +55,13 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
         [Fact]
         public void ShouldCreateACollectionOfDebitTransactionsForAnAccount()
         {
-            
+
             Assert.Equal(transactioncollectionviewmodel.Object, sut.GetDebitsCollectionViewModelForAccount(account.Object));
         }
 
         [Fact]
         public void ShouldSetTheAccountDebitsWithTheCollectionFromTheRepository()
-        { 
+        {
             sut.GetDebitsCollectionViewModelForAccount(account.Object);
             account.VerifySet(a => a.Debits = transactioncollection.Object);
         }

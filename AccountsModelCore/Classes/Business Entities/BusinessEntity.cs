@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using AccountLib.Interfaces;
-using AccountLib.Model.Source_Documents;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces;
 using AccountsModelCore.Interfaces.BusinessEntities;
 
 namespace AccountLib.Model.BusinessEntities

@@ -1,10 +1,10 @@
 ﻿using AccountLib.Model.BusinessEntities;
 
-namespace AccountLib.Interfaces.Accounts
+namespace AccountsModelCore.Interfaces.Accounts
 {
     public interface ILiabilityAccount : IAccount
     {
         int BusinessEntityId { get; set; }
-        BusinessEntity Creditor { get; set;}
+        BusinessEntity Creditor { get; set; }
     }
 }

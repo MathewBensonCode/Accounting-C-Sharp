@@ -1,5 +1,4 @@
-﻿using AccountLib.Model.Transactions;
-using AccountsViewModel.EntityViewModels;
+﻿using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Services.Interfaces;
 

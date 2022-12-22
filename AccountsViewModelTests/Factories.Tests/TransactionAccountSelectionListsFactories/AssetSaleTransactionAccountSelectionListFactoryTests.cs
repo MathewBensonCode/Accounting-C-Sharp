@@ -1,20 +1,21 @@
-﻿using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
-using Accounts.Repositories;
-using Moq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.Factories.TransactionAccountSelectionListFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.TransactionAccountSelectionListsFactories
+namespace AccountsViewModelTests.Factories.Tests.TransactionAccountSelectionListsFactories
 {
     public class AssetSaleTransactionAccountSelectionListFactoryTests
         : TransactionAccountSelectionListFactoryTests<AssetPurchaseTransaction>
     {
-        Mock<IRepository<Account>> repository;
-        Mock<ICollection<Account>> assetaccounts;
-        Mock<ICollection<Account>> currencyaccounts;
-        AssetSaleTransactionAccountSelectionListFactory sut;
+        private readonly Mock<IRepository<Account>> repository;
+        private readonly Mock<ICollection<Account>> assetaccounts;
+        private readonly Mock<ICollection<Account>> currencyaccounts;
+        private readonly AssetSaleTransactionAccountSelectionListFactory sut;
+
         public AssetSaleTransactionAccountSelectionListFactoryTests()
         {
             repository = new Mock<IRepository<Account>>();
@@ -25,8 +26,6 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.TransactionAccountSelect
                 .Returns(assetaccounts.Object);
             repository.As<IAccountRepository>().Setup(r => r.GetCurrencyAccounts())
                 .Returns(currencyaccounts.Object);
-
-
 
             sut = new AssetSaleTransactionAccountSelectionListFactory(
                 repository.Object

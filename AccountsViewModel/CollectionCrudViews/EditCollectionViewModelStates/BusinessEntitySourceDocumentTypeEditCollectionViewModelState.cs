@@ -1,10 +1,10 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model.Source_Documents;
+﻿using AccountsModelCore.Classes;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.EditCollectionViewModelStates
 {
     public class BusinessEntitySourceDocumentTypeEditCollectionViewModelState :
         EditEntityInCollectionViewModelState<BusinessEntitySourceDocumentType>, ICollectionEditViewModelState<BusinessEntitySourceDocumentType>

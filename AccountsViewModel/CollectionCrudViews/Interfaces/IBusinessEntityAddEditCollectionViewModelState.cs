@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using AccountLib.Model;
+using AccountsModelCore.Classes;
 
 namespace AccountsViewModel.CollectionCrudViews.Interfaces
 {
     public interface IBusinessEntityAddEditCollectionViewModelState
     {
-        IEnumerable<Country> CountryList {get;}
+        IEnumerable<Country> CountryList { get; }
     }
 }

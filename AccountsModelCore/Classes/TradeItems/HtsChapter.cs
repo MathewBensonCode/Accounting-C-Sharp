@@ -1,8 +1,8 @@
-﻿using AccountLib.Interfaces;
-using AccountLib.Interfaces.TradeItems;
+﻿using AccountsModelCore.Interfaces;
+using AccountsModelCore.Interfaces.TradeItems;
 using System.Collections.Generic;
 
-namespace AccountLib.Model.TradeItems
+namespace AccountsModelCore.Classes.TradeItems
 {
     public class HtsChapter : IHtsChapter, IDbModel
     {

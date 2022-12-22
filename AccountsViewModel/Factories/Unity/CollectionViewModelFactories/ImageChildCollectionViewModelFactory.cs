@@ -1,8 +1,8 @@
-﻿using Accounts.Repositories;
-using AccountLib.Interfaces.SourceDocuments;
+﻿using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Interfaces.SourceDocuments;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
-using AccountsModelCore.Classes.DocumentImages;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.Factories.Unity.CollectionViewModelFactories
 {

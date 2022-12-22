@@ -1,31 +1,35 @@
-﻿using Accounts.Repositories;
-using AccountLib.Interfaces;
-using Moq;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using AccountsModelCore.Interfaces;
 using AccountsViewModel.Repositories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
+namespace AccountsViewModelTests.Repositories.Tests.ChildRepositories
 {
-    abstract public class ChildCollectionRepositoryTests<T>
-        where T:class,IDbModel, new()
+    public abstract class ChildCollectionRepositoryTests<T>
+        where T : class, IDbModel, new()
     {
-        protected Mock<ICollection<T>> collection;
-        ChildCollectionRepository<T> sut;
-        List<T> collectionList;
-        ChildCollectionRepository<T> sutWithList;
+        private readonly ChildCollectionRepository<T> sut;
+        private readonly List<T> collectionList;
+        private readonly ChildCollectionRepository<T> sutWithList;
+
+        protected Mock<ICollection<T>> Collection { get; }
 
         public ChildCollectionRepositoryTests()
         {
-            collection = new Mock<ICollection<T>>();
-            sut = new ChildCollectionRepository<T>(collection.Object);
+            Collection = new Mock<ICollection<T>>();
+            sut = new ChildCollectionRepository<T>(Collection.Object);
 
             collectionList = new List<T>();
-            for (int i=1; i<=100; i++)
+            for (int i = 1; i <= 100; i++)
             {
-                var t = new T();
-                t.Id = i;
+                var t = new T
+                {
+                    Id = i
+                };
+
                 collectionList.Add(t);
             }
 
@@ -35,7 +39,7 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
         [Fact]
         public void ShouldBeOfTypeIRepository()
         {
-            
+
             Assert.IsAssignableFrom<IRepository<T>>(sut);
         }
 
@@ -43,7 +47,7 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
         public void ShouldAddAnEntityToUnderlyingCollection()
         {
             sut.AddSingle(It.IsAny<T>());
-            collection.Verify(a => a.Add(It.IsAny<T>()), Times.Once());
+            Collection.Verify(a => a.Add(It.IsAny<T>()), Times.Once());
         }
 
         [Fact]
@@ -61,7 +65,7 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
 
             samplelist.Setup(a => a.GetEnumerator()).Returns(enumerator.Object);
             sut.AddRange(samplelist.Object);
-            collection.Verify(a => a.Add(It.IsAny<T>()), Times.Exactly(3));
+            Collection.Verify(a => a.Add(It.IsAny<T>()), Times.Exactly(3));
         }
 
         [Fact]
@@ -71,7 +75,7 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
             var t2 = new T();
             var t3 = new T();
             var t4 = new T();
-            var collection1 = new List<T>{ t1, t2, t3, t4 };
+            var collection1 = new List<T> { t1, t2, t3, t4 };
             var sut1 = new ChildCollectionRepository<T>(collection1);
             Assert.Contains(t1, sut1.GetAll());
             Assert.Contains(t2, sut1.GetAll());
@@ -88,7 +92,7 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
             var collection1 = new List<T> { t1 };
             var sut1 = new ChildCollectionRepository<T>(collection1);
             sut1.RemoveSingle(t1);
-            Assert.DoesNotContain(t1, collection1);            
+            Assert.DoesNotContain(t1, collection1);
         }
 
         [Fact]
@@ -98,7 +102,7 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
             var t2 = new T();
             var collection1 = new List<T> { t1 };
             var sut1 = new ChildCollectionRepository<T>(collection1);
-            Assert.Throws<ArgumentOutOfRangeException>(()=>sut1.RemoveSingle(t2));
+            Assert.Throws<ArgumentOutOfRangeException>(() => sut1.RemoveSingle(t2));
         }
 
         [Fact]
@@ -110,7 +114,7 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
             var t4 = new T();
 
             var collection1 = new List<T> { t1, t2, t3, t4 };
-            var listtoremove = new List<T> { t1,t3 };
+            var listtoremove = new List<T> { t1, t3 };
 
             var sut1 = new ChildCollectionRepository<T>(collection1);
             sut1.RemoveRange(listtoremove);
@@ -127,18 +131,18 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
             var t3 = new T();
             var t4 = new T();
 
-            var collection1 = new List<T> {  t2, t3, t4 };
+            var collection1 = new List<T> { t2, t3, t4 };
             var listtoremove = new List<T> { t1, t3 };
 
             var sut1 = new ChildCollectionRepository<T>(collection1);
-            Assert.Throws<ArgumentOutOfRangeException>(()=>sut1.RemoveRange(listtoremove));
+            Assert.Throws<ArgumentOutOfRangeException>(() => sut1.RemoveRange(listtoremove));
 
         }
 
         [Fact]
         public void ShouldHaveAPropertyWithThePageSizeForTheCollection()
         {
-            Assert.True(sut.GetPageSize() >0);
+            Assert.True(sut.GetPageSize() > 0);
         }
 
         [Fact]
@@ -150,16 +154,20 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
         [Fact]
         public void ShouldReturnEntityWithGivenIdFromCollection()
         {
-            var t1 = new T();
-            t1.Id = 10;
+            var t1 = new T
+            {
+                Id = 10
+            };
             Assert.Equal(t1.Id, sutWithList.Find(t1.Id).Id);
         }
 
         [Fact]
         public void ShouldReturnNullFromFindIfEntityNotFound()
         {
-            var t1 = new T();
-            t1.Id = 200;
+            var t1 = new T
+            {
+                Id = 200
+            };
             Assert.Null(sutWithList.Find(t1.Id));
         }
 
@@ -183,6 +191,6 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
             var current = enumerator.Current;
             Assert.Equal(1, current.Id);
         }
-       
+
     }
 }

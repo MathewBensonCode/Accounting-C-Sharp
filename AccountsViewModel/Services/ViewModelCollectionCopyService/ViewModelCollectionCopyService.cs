@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.EntityViewModels;
-using AccountsViewModel.Factories.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Services.Interfaces;
 
 namespace AccountsViewModel.Services.ViewModelCollectionCopyService
@@ -13,8 +13,8 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
         : IViewModelCollectionCopyService<T>
         where T : class
     {
-        IViewModelFactory<T> _viewmodelfactory;
-        IViewModelCopyService<T> _viewmodelcopyservice;
+        private readonly IViewModelFactory<T> _viewmodelfactory;
+        private readonly IViewModelCopyService<T> _viewmodelcopyservice;
 
         public ViewModelCollectionCopyService(
             IViewModelCopyService<T> viewmodelcopyservice,
@@ -24,12 +24,10 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
             _viewmodelfactory = viewmodelfactory;
         }
 
-
         public void CopyCollection(IEntityCollectionViewModel<T> copyfrom, IEntityCollectionViewModel<T> copyto)
         {
             var originalcollection = (copyfrom.CollectionViewState as ICollectionListViewModelState<T>).EntityCollection;
             var copycollection = (copyto.CollectionViewState as ICollectionListViewModelState<T>).EntityCollection;
-
 
             if (copycollection.Count > 0)
             {
@@ -37,11 +35,11 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
                 {
                     foreach (IEntityViewModel<T> entity in originalcollection)
                     {
-                        IEntityViewModel<T> copyentity = containsentity(entity, copycollection as IEnumerable<IEntityViewModel<T>>);
+                        IEntityViewModel<T> copyentity = Containsentity(entity, copycollection);
                         if (copyentity == null)
                         {
                             copyentity = GetNewEntity(entity);
-                           // copyentity.Entity.Id = entity.Id;
+                            // copyentity.Entity.Id = entity.Id;
                             _viewmodelcopyservice.CopyEntityViewModel(entity, copyentity);
                             copycollection.Add(copyentity);
                         }
@@ -57,7 +55,7 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
                     var removallist = new List<IEntityViewModel<T>>();
                     foreach (IEntityViewModel<T> entity in copycollection)
                     {
-                        IEntityViewModel<T> checkentity = containsentity(entity, originalcollection as IEnumerable<IEntityViewModel<T>>);
+                        IEntityViewModel<T> checkentity = Containsentity(entity, originalcollection);
                         if (checkentity == null)
                         {
                             removallist.Add(entity);
@@ -70,7 +68,7 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
 
                     foreach (IEntityViewModel<T> entity in removallist)
                     {
-                        copycollection.Remove(entity);
+                        _ = copycollection.Remove(entity);
                     }
                 }
 
@@ -94,18 +92,20 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
             }
         }
 
-
-        IEntityViewModel<T> containsentity(IEntityViewModel<T> entity, IEnumerable<IEntityViewModel<T>> collection)
+        private IEntityViewModel<T> Containsentity(IEntityViewModel<T> entity, IEnumerable<IEntityViewModel<T>> collection)
         {
             foreach (IEntityViewModel<T> ent in collection)
             {
                 if (ent.Id == entity.Id)
+                {
                     return ent;
+                }
             }
+
             return null;
         }
 
-        void CopyIfChanged(IEntityViewModel<T> original, IEntityViewModel<T> copy)
+        private void CopyIfChanged(IEntityViewModel<T> original, IEntityViewModel<T> copy)
         {
             if (original.HasChanged)
             {
@@ -113,15 +113,15 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
             }
         }
 
-        IEntityViewModel<T> GetNewEntity(IEntityViewModel<T> entityvm)
+        private IEntityViewModel<T> GetNewEntity(IEntityViewModel<T> entityvm)
         {
             return _viewmodelfactory.CreateViewModelForNewEntity(GetEntityType(entityvm.Entity));
         }
 
-        virtual protected string GetEntityType(object entity){
+        protected virtual string GetEntityType(object entity)
+        {
             return null;
         }
-
 
     }
 }

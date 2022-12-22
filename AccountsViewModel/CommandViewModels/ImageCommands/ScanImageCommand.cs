@@ -1,6 +1,6 @@
-using AccountsViewModelsCore.Services.Interfaces;
-using Prism.Commands;
 using AccountsViewModel.EntityViewModels.Interfaces;
+using ImageServices.Services.Interfaces;
+using Prism.Commands;
 
 namespace AccountsViewModel.CommandViewModels.ImageCommands
 {
@@ -17,7 +17,7 @@ namespace AccountsViewModel.CommandViewModels.ImageCommands
             var imagefolder = pathservice.GetFolderPathForNewImage();
             var imagepath = pathservice.GetFileNameForNewImage();
             createimageservice.CreateImageInFolderWithFilename(imagefolder, imagepath);
-            (imageViewModel as IDocumentImageViewModel).Path = pathservice.GetFullPath(imagefolder, imagepath);
+            imageViewModel.Path = pathservice.GetFullPath(imagefolder, imagepath);
         }
                 )
         {

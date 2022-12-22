@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using AccountLib.Model.BusinessEntities;
 using AccountLib.Model.SourceDocuments;
-using Accounts.Repositories;
 using AccountsEntityFrameworkCore;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.Repositories
 {

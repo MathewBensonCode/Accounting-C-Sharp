@@ -2,7 +2,7 @@
 using AccountsModelCore.Interfaces.BusinessEntities;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 
-namespace AccountsViewModel.EntityViewModels
+namespace AccountsViewModel.Factories.Interfaces.CollectionViewModels
 {
     public interface ISourceDocumentCollectionViewModelFactory
     {

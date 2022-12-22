@@ -1,8 +1,8 @@
-using AccountLib.Model.BusinessEntities;
-using Accounts.Repositories;
-using AccountsEntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using AccountLib.Model.BusinessEntities;
+using AccountsEntityFrameworkCore;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.Repositories
 {
@@ -14,14 +14,7 @@ namespace AccountsViewModel.Repositories
         {
         }
 
-
-        public AccountsDbContext AccountsDbContext
-        {
-            get
-            {
-                return _context as AccountsDbContext;
-            }
-        }
+        public AccountsDbContext AccountsDbContext => _context;
 
         public override BusinessEntity Find(int Id)
         {
@@ -43,6 +36,5 @@ namespace AccountsViewModel.Repositories
             return AccountsDbContext.BusinessEntities.OfType<RegisteredBusiness>().ToList();
         }
     }
-
 
 }

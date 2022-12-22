@@ -1,4 +1,4 @@
-﻿using AccountLib.Interfaces.SourceDocuments;
+﻿using AccountsModelCore.Interfaces.SourceDocuments;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 
 namespace AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories

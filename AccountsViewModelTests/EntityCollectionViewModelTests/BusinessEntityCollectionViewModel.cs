@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.BusinessEntities;
 
-namespace AccountsViewModel.Xunit.Tests.EntityCollectionViewModelTests
+namespace AccountsViewModelTests.EntityCollectionViewModelTests
 {
-    public class BusinessEntityCollectionViewModel:
+    public class BusinessEntityCollectionViewModel :
         EntityCollectionViewModelTests<BusinessEntity>
     {
     }

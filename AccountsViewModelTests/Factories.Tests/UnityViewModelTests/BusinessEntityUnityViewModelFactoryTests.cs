@@ -1,16 +1,15 @@
-﻿using AccountLib.Model.BusinessEntities;
-using Moq;
-using AccountsViewModel.EntityViewModels;
+﻿using System.Collections.Generic;
+using AccountLib.Model.BusinessEntities;
+using AccountsModelCore.Classes;
+using AccountsViewModel.EntityViewModels.Classes.BusinessEntities;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Factories.Unity.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Unity.Resolution;
 using Xunit;
-using AccountsViewModel.EntityViewModels.Classes.BusinessEntities;
-using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
-using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
-using Accounts.Repositories;
-using AccountLib.Model;
-using System.Collections.Generic;
-using AccountsViewModel.Factories.Interfaces.ColectionViewModelFactories;
 
 namespace AccountsViewModelTests.Factories.Tests.UnityViewModelTests
 {

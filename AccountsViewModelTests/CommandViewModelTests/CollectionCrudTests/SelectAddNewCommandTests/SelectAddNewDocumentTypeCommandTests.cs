@@ -1,8 +1,8 @@
-﻿using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SelectAddNewCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectAddNewCommandTests
 {
-    public class SelectAddNewDocumentTypeNameCommandTests:
+    public class SelectAddNewDocumentTypeNameCommandTests :
         SelectAddNewCommandTests<DocumentTypeName>
     {
     }

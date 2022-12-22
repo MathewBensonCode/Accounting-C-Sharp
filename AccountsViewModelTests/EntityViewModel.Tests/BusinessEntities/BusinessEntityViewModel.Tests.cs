@@ -1,13 +1,13 @@
-﻿using AccountLib.Model;
+﻿using System.Collections.Generic;
 using AccountLib.Model.BusinessEntities;
-using Accounts.Repositories;
-using Moq;
-using System.Collections.Generic;
-using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
-using Xunit;
-using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
-using AccountsViewModel.EntityViewModels.Classes.BusinessEntities;
+using AccountsModelCore.Classes;
 using AccountsModelCore.Interfaces.BusinessEntities;
+using AccountsViewModel.EntityViewModels.Classes.BusinessEntities;
+using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
+using Xunit;
 
 namespace AccountsViewModelTests.EntityViewModel.Tests.BusinessEntities
 {
@@ -98,7 +98,7 @@ namespace AccountsViewModelTests.EntityViewModel.Tests.BusinessEntities
         [Fact]
         public void ShouldHaveAProperyWithListOfCountryNamesForSelection()
         {
-            _ = Countryrepository.Setup(a => a.GetAll()).Returns(countrylist);
+            Countryrepository.Setup(a => a.GetAll()).Returns(countrylist);
             Assert.Equal(countrylist, BusinessEntityViewModelSut.CountryList);
         }
 

@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.BusinessEntities;
 using AccountLib.Model.SourceDocuments;
-using Accounts.Repositories;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.Factories.Unity.CollectionViewModelFactories
 {

@@ -1,8 +1,8 @@
-﻿using AccountLib.Interfaces.SourceDocuments;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Interfaces.SourceDocuments;
 
-namespace Accounts.Repositories
+namespace AccountsViewModel.Repositories.Interfaces
 {
     public interface IImageRepository : IRepository<DocumentImage>
     {

@@ -1,7 +1,7 @@
-﻿using AccountLib.Model.Accounts;
-using AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests;
+﻿using AccountsModelCore.Classes.Accounts;
+using AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
 {
     public class SaveEditAssetAccountToRepositoryViewModelTests :
       SaveEditToRepositoryCommandTests<AssetAccount>

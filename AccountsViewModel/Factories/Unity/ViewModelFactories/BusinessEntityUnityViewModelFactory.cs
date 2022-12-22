@@ -1,12 +1,11 @@
 ﻿using AccountLib.Model.BusinessEntities;
-using Accounts.Repositories;
-using AccountLib.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsModelCore.Interfaces;
+using AccountsModelCore.Interfaces.BusinessEntities;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 using Unity.Resolution;
-using AccountsModelCore.Interfaces.BusinessEntities;
 
 namespace AccountsViewModel.Factories.Unity.ViewModelFactories
 {

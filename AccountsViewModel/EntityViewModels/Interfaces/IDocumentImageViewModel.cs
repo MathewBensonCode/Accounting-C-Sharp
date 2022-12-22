@@ -1,5 +1,5 @@
 ﻿using AccountsModelCore.Classes.DocumentImages;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 
 namespace AccountsViewModel.EntityViewModels.Interfaces
 {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces
+namespace AccountsViewModel.CommandViewModels.Interfaces
 {
     public interface ICommandViewModel
     {

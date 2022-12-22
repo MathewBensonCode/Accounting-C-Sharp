@@ -1,11 +1,10 @@
-﻿using AccountLib.Model.Source_Documents;
-using Moq;
-using AccountsViewModel.EntityViewModels;
+﻿using AccountLib.Model.SourceDocuments;
+using AccountsModelCore.Classes;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Factories.Unity.ViewModelFactories;
 using Unity.Resolution;
 using Xunit;
-using AccountLib.Model.SourceDocuments;
 
 namespace AccountsViewModelTests.Factories.Tests.UnityViewModelTests
 {

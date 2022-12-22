@@ -1,6 +1,6 @@
-﻿using AccountLib.Model.TradeItems;
+﻿using AccountsModelCore.Classes.TradeItems;
 
-namespace AccountLib.Interfaces.Accounts
+namespace AccountsModelCore.Interfaces.Accounts
 {
     public interface IIncomeAccount : IAccount
     {

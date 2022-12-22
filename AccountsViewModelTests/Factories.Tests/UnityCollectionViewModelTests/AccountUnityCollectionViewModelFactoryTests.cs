@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Accounts;
+﻿using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests
 {
-    abstract public class AccountUnityCollectionViewModelFactoryTests:
+    public abstract class AccountUnityCollectionViewModelFactoryTests :
         UnityCollectionViewModelFactoryTests<Account>
     {
     }
@@ -41,6 +41,5 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
       AccountUnityCollectionViewModelFactoryTests
     {
     }
-
 
 }

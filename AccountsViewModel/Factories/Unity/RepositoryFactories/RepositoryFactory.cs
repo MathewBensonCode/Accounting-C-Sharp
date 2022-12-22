@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Accounts.Repositories;
-using AccountsViewModel.Factories.Repositories.Interfaces;
+using AccountsViewModel.Factories.Interfaces.RepositoryFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 using Unity.Resolution;
 
@@ -9,7 +9,7 @@ namespace AccountsViewModel.Factories.Unity.RepositoryFactories
     public class RepositoryFactory<T> :
         IRepositoryFactory<T> where T : class
     {
-        IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
         public RepositoryFactory(IUnityContainer container)
         {

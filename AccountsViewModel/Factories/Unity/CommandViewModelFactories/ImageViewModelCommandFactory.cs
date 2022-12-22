@@ -1,5 +1,5 @@
 using System.Windows.Input;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
 using Unity;
@@ -10,7 +10,7 @@ namespace AccountsViewModel.Factories.Unity.CommandViewModelFactories
     public class UnityImageViewModelCommandFactory :
         IImageViewModelCommandFactory
     {
-        IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
         public UnityImageViewModelCommandFactory(IUnityContainer container)
         {

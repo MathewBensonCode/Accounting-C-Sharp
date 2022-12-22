@@ -1,5 +1,5 @@
 using AccountLib.Model.BusinessEntities;
-using AccountsViewModel.Factories.Interfaces;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Services.Interfaces;
 
 namespace AccountsViewModel.Services.ViewModelCollectionCopyService

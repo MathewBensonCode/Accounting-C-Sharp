@@ -1,23 +1,23 @@
-﻿using Accounts.Repositories;
-using AutoFixture.Xunit2;
-using Moq;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
 using Unity;
 using Unity.Resolution;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories
 {
-    abstract public class UnityCollectionCrudViewStateFactoryTests<T> where T: class
+    public abstract class UnityCollectionCrudViewStateFactoryTests<T> where T : class
     {
         [Theory, AutoCatalogData]
         public void ShouldCreateACollectionListViewStateEntityUsingUnity(
-            [Frozen]Mock<IRepository<T>> repository,
-            [Frozen]Mock<IEntityCollectionViewModel<T>> collectionvm,
-            [Frozen]Mock<IUnityContainer> container,
+            [Frozen] Mock<IRepository<T>> repository,
+            [Frozen] Mock<IEntityCollectionViewModel<T>> collectionvm,
+            [Frozen] Mock<IUnityContainer> container,
             CollectionCrudViewStateFactory<T> sut
             )
         {
@@ -27,7 +27,6 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewS
                 {
                     new ParameterOverride("repository", repository.Object),
                     new ParameterOverride("collection", collectionvm.Object)
-
                 }
                 ));
 

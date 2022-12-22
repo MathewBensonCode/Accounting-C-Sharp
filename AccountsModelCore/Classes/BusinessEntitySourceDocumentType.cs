@@ -1,7 +1,7 @@
-﻿using AccountLib.Interfaces;
-using AccountLib.Model.BusinessEntities;
+﻿using AccountLib.Model.BusinessEntities;
+using AccountsModelCore.Interfaces;
 
-namespace AccountLib.Model.Source_Documents
+namespace AccountsModelCore.Classes
 {
     public class BusinessEntitySourceDocumentType :
         IBusinessEntitySourceDocumentType, IDbModel
@@ -12,7 +12,7 @@ namespace AccountLib.Model.Source_Documents
         public virtual BusinessEntity BusinessEntity { get; set; }
 
         public int DocumentTypeNameId { get; set; }
-        public virtual DocumentTypeName DocumentTypeName {get; set;}
+        public virtual DocumentTypeName DocumentTypeName { get; set; }
 
         public string DateRegex { get; set; }
         public string ItemNameRegex { get; set; }
@@ -21,6 +21,6 @@ namespace AccountLib.Model.Source_Documents
         public string ItemTotalCostRegex { get; set; }
         public string BusinessEntityItemReferenceRegex { get; set; }
         public string TransactionRegex { get; set; }
-        public string DocumentTypeNameRegex { get; set ; }
+        public string DocumentTypeNameRegex { get; set; }
     }
 }

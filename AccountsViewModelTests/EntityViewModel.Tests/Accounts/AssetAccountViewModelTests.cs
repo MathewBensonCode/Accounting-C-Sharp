@@ -1,4 +1,4 @@
-using AccountLib.Model.Accounts;
+using AccountsModelCore.Classes.Accounts;
 using AccountsViewModel.EntityViewModels.Classes;
 using AccountsViewModel.EntityViewModels.Classes.Accounts;
 

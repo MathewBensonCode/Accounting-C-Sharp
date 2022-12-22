@@ -1,6 +1,6 @@
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.Accounts;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Classes.Accounts;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;

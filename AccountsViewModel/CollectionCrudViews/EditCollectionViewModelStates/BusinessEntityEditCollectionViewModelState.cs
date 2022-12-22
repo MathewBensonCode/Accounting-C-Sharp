@@ -1,11 +1,11 @@
-using AccountLib.Model;
 using AccountLib.Model.BusinessEntities;
-using Accounts.Repositories;
+using AccountsModelCore.Classes;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.EditCollectionViewModelStates
 {
     public class BusinessEntityEditCollectionViewModelState
         : BusinessEntityAddEditCollectionViewModelState, ICollectionEditViewModelState<BusinessEntity>
@@ -22,7 +22,7 @@ namespace AccountsViewModel.CollectionCrudViews
 
         protected override void CreateSaveCommand()
         {
-            SaveCommand = CommandFactory.CreateSaveEditCommand(this as ICollectionEditViewModelState<BusinessEntity>, ListViewModelState, Repository, CollectionViewModel);
+            SaveCommand = CommandFactory.CreateSaveEditCommand(this, ListViewModelState, Repository, CollectionViewModel);
         }
     }
 }

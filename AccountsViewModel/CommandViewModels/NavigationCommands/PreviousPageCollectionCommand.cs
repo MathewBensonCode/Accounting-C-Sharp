@@ -1,5 +1,4 @@
-﻿using Accounts.Repositories;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using Prism.Commands;
 
 namespace AccountsViewModel.CommandViewModels.NavigationCommands
@@ -8,7 +7,6 @@ namespace AccountsViewModel.CommandViewModels.NavigationCommands
         DelegateCommand where T : class
     {
         public PreviousPageCollectionCommand(
-            IRepository<T> repository,
             ICollectionListViewModelState<T> listViewState
             ) :
             base(

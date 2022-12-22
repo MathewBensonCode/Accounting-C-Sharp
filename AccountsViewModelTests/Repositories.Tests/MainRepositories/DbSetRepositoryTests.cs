@@ -1,31 +1,30 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Accounts.Repositories;
 using AccountsEntityFrameworkCore;
-using AccountLib.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Moq;
+using AccountsModelCore.Interfaces;
 using AccountsViewModel.Repositories;
 using AccountsViewModel.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Moq;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
+namespace AccountsViewModelTests.Repositories.Tests.MainRepositories
 {
-    abstract public class DbSetRepositoryTests<T>
-        where T : class, IDbModel, new()
+    public abstract class DbSetRepositoryTests<T> : IDisposable where T : class, IDbModel, new()
     {
-        DbSetRepository<T> sut;
-        Mock<DbSet<T>> dbSet;
-	AccountsDbContext dbContext;
+        private readonly DbSetRepository<T> sut;
+        private readonly Mock<DbSet<T>> dbSet;
+        private readonly AccountsDbContext dbContext;
 
         public DbSetRepositoryTests()
         {
             dbSet = new Mock<DbSet<T>>();
             sut = new DbSetRepository<T>(dbContext);
-	    var Options = new DbContextOptionsBuilder<AccountsDbContext>()
-		    .UseInMemoryDatabase("DbSet Tests") 
-		    .Options;
-	    dbContext = new AccountsDbContext(Options);
+            var Options = new DbContextOptionsBuilder<AccountsDbContext>()
+                .UseInMemoryDatabase("DbSet Tests")
+                .Options;
+            dbContext = new AccountsDbContext(Options);
         }
 
         [Fact]
@@ -39,7 +38,6 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
         {
             Assert.IsAssignableFrom<ISaveRepository>(sut);
         }
-
 
         [Fact]
         public void ShouldAddAnEntityToUnderlyingDbSet()
@@ -66,21 +64,25 @@ namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
             dbSet.Verify(a => a.Add(It.IsAny<T>()), Times.Exactly(3));
         }
 
-
         [Fact]
         public void ShouldGetAnIEnumerableOfAllEntitiesFromTheUnderlyingDbSet()
-	{ 
+        {
             var t1 = new T();
             var t2 = new T();
             var t3 = new T();
             var t4 = new T();
-	    var list = new List<T>(){t1, t2, t3, t4};
-	    dbSet.Setup(a => a.ToList()).Returns(list);
-	    Assert.Contains(t1, sut.GetAll());
-	    Assert.Contains(t2, sut.GetAll());
-	    Assert.Contains(t3, sut.GetAll());
-	   
+            var list = new List<T>() { t1, t2, t3, t4 };
+            dbSet.Setup(a => a.ToList()).Returns(list);
+            Assert.Contains(t1, sut.GetAll());
+            Assert.Contains(t2, sut.GetAll());
+            Assert.Contains(t3, sut.GetAll());
+
         }
 
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+            dbContext.Dispose();
+        }
     }
 }

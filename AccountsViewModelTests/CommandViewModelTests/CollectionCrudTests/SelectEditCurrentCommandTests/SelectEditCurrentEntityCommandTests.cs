@@ -1,18 +1,18 @@
-﻿using AutoFixture.Xunit2;
-using Moq;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.CommandViewModels.CollectionCommands;
-using AccountsViewModel.EntityViewModels;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
-using Xunit;
-using AccountsViewModel.Factories.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Services.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
+using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
 {
-    abstract public class SelectEditCurrentEntityCommandTests<T>
+    public abstract class SelectEditCurrentEntityCommandTests<T>
         where T : class, new()
     {
         [Theory, AutoCatalogData]
@@ -23,11 +23,10 @@ namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTest
             Assert.IsAssignableFrom<ICommand>(sut);
         }
 
-
         [Theory, AutoCatalogData]
         public void ShouldSetEditViewToCollectionViewModel(
-            [Frozen]Mock<IEntityCollectionViewModel<T>> collectionvm,
-            [Frozen]Mock<ICollectionEditViewModelState<T>> editviewstate,
+            [Frozen] Mock<IEntityCollectionViewModel<T>> collectionvm,
+            [Frozen] Mock<ICollectionEditViewModelState<T>> editviewstate,
             SelectEditViewCommand<T> sut
             )
         {
@@ -37,15 +36,15 @@ namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTest
 
         [Theory, AutoCatalogData]
         public void ShouldSetTheEntityViewModelToBeANewEntity(
-	        Mock<IEntityViewModel<T>> NewEntity,
-            [Frozen]Mock<IViewModelFactory<T>> viewModelFactory,
-            [Frozen]Mock<ICollectionEditViewModelState<T>> editViewState,
+            Mock<IEntityViewModel<T>> NewEntity,
+            [Frozen] Mock<IViewModelFactory<T>> viewModelFactory,
+            [Frozen] Mock<ICollectionEditViewModelState<T>> editViewState,
             SelectEditViewCommand<T> sut
             )
         {
             viewModelFactory.Setup(a => a.CreateViewModelForNewEntity(null))
              .Returns(NewEntity.Object);
-               sut.Execute(null);
+            sut.Execute(null);
             editViewState.VerifySet(a => a.EntityViewModel = NewEntity.Object);
         }
 
@@ -53,10 +52,10 @@ namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTest
         public void ShouldCopyValuesFromCurrentEntityToTheEditEntity(
             Mock<IEntityViewModel<T>> listviewstateentity,
             Mock<IEntityViewModel<T>> NewEntity,
-            [Frozen]Mock<IViewModelFactory<T>> viewModelFactory,
-            [Frozen]Mock<ICollectionListViewModelState<T>> listviewstate,
-            [Frozen]Mock<ICollectionEditViewModelState<T>> editviewstate,
-            [Frozen]Mock<IViewModelCopyService<T>> viewModelCopyService,
+            [Frozen] Mock<IViewModelFactory<T>> viewModelFactory,
+            [Frozen] Mock<ICollectionListViewModelState<T>> listviewstate,
+            [Frozen] Mock<ICollectionEditViewModelState<T>> editviewstate,
+            [Frozen] Mock<IViewModelCopyService<T>> viewModelCopyService,
             SelectEditViewCommand<T> sut
             )
         {
@@ -70,7 +69,7 @@ namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTest
 
         [Theory, AutoCatalogData]
         public void ShouldNotExecuteIfCurrentEntityIsNull(
-            [Frozen]Mock<ICollectionListViewModelState<T>> collectionviewstate,
+            [Frozen] Mock<ICollectionListViewModelState<T>> collectionviewstate,
             SelectEditViewCommand<T> sut
             )
         {
@@ -90,9 +89,6 @@ namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTest
         //    sut.Execute();
 
         //}
-
-
-
 
     }
 }

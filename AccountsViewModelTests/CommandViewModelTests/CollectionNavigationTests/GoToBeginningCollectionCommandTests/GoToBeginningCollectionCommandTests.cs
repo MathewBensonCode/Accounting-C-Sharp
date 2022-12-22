@@ -1,8 +1,8 @@
 ﻿using System.Windows.Input;
-using Accounts.Repositories;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CommandViewModels.NavigationCommands;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
 using AutoFixture.Xunit2;
 using Moq;
 using Xunit;

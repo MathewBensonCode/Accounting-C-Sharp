@@ -1,63 +1,61 @@
 using System.Collections.Generic;
 using System.Linq;
-using AccountLib.Model.Accounts;
-using Accounts.Repositories;
 using AccountsEntityFrameworkCore;
+using AccountsModelCore.Classes.Accounts;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.Repositories.DbSetRepositories
+namespace AccountsViewModel.Repositories.AccountDbSetRepositories
 {
-	public class CapitalAccountDbSetRepository
-		: AccountDbSetRepository, IRepository<CapitalAccount>
-	{
-		public CapitalAccountDbSetRepository(AccountsDbContext context, int pageSize = 10) : base(context, pageSize)
-		{
-		}
+    public class CapitalAccountDbSetRepository
+        : AccountDbSetRepository, IRepository<CapitalAccount>
+    {
+        public CapitalAccountDbSetRepository(AccountsDbContext context, int pageSize = 10) : base(context, pageSize)
+        {
+        }
 
+        IEnumerable<CapitalAccount> IRepository<CapitalAccount>.GetAll()
+        {
+            return GetCapitalAccounts() as IEnumerable<CapitalAccount>;
+        }
 
+        CapitalAccount IRepository<CapitalAccount>.Find(int Id)
+        {
+            return _dbSet.OfType<CapitalAccount>().Where(a => a.Id == Id).FirstOrDefault();
+        }
 
-		IEnumerable<CapitalAccount> IRepository<CapitalAccount>.GetAll()
-		{
-			return GetCapitalAccounts() as IEnumerable<CapitalAccount>;
-		}
+        IEnumerable<CapitalAccount> IRepository<CapitalAccount>.GetDefault()
+        {
+            return _dbSet.Take(GetPageSize()).ToList().OfType<CapitalAccount>().ToList();
+        }
 
-		CapitalAccount IRepository<CapitalAccount>.Find(int Id)
-		{
-			return _dbSet.OfType<CapitalAccount>().Where(a => a.Id == Id).FirstOrDefault();
-		}
+        IEnumerable<CapitalAccount> IRepository<CapitalAccount>.GetPageCollection(int Id)
+        {
+            return _dbSet.Skip((Id - 1) * GetPageSize()).Take(GetPageSize()).ToList() as IEnumerable<CapitalAccount>;
+        }
 
-		IEnumerable<CapitalAccount> IRepository<CapitalAccount>.GetDefault()
-		{
-			return _dbSet.Take(GetPageSize()).ToList().OfType<CapitalAccount>().ToList();
-		}
+        public void AddSingle(CapitalAccount entity)
+        {
+            AddSingle(entity as Account);
+        }
 
-		IEnumerable<CapitalAccount> IRepository<CapitalAccount>.GetPageCollection(int Id)
-		{
-			return _dbSet.Skip((Id - 1) * GetPageSize()).Take(GetPageSize()).ToList() as IEnumerable<CapitalAccount>;
-		}
+        public void AddRange(IEnumerable<CapitalAccount> entities)
+        {
+            AddRange(entities as IEnumerable<Account>);
+        }
 
-		public void AddSingle(CapitalAccount entity)
-		{
-			AddSingle(entity as Account);
-		}
+        public void RemoveSingle(CapitalAccount entity)
+        {
+            RemoveSingle(entity as Account);
+        }
 
-		public void AddRange(IEnumerable<CapitalAccount> entities)
-		{
-			AddRange(entities as IEnumerable<Account>);
-		}
+        public void RemoveRange(IEnumerable<CapitalAccount> entities)
+        {
+            RemoveRange(entities as IEnumerable<Account>);
+        }
 
-		public void RemoveSingle(CapitalAccount entity)
-		{
-			RemoveSingle(entity as Account);
-		}
-
-		public void RemoveRange(IEnumerable<CapitalAccount> entities)
-		{
-			RemoveRange(entities as IEnumerable<Account>);
-		}
-
-		public bool Contains(CapitalAccount entity)
-		{
-			return Contains(entity as Account);
-		}
-	}
+        public bool Contains(CapitalAccount entity)
+        {
+            return Contains(entity as Account);
+        }
+    }
 }

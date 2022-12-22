@@ -1,9 +1,8 @@
-﻿using AccountLib.Model.Transactions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.Transactions;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
-using AccountLib.Interfaces.Transactions;
-using AccountsViewModel.Entity.Interfaces;
 
 namespace AccountsViewModel.EntityViewModels.Classes.Transactions
 {

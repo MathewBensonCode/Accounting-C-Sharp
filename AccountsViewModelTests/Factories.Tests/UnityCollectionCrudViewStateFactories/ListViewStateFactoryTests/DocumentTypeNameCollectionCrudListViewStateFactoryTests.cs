@@ -1,8 +1,8 @@
-﻿using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.ListViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.ListViewStateFactoryTests
 {
-    public class DocumentTypeNameCollectionCrudListViewStateFactoryTests:
+    public class DocumentTypeNameCollectionCrudListViewStateFactoryTests :
         UnityCollectionCrudListViewStateFactoryTests<DocumentTypeName>
     {
     }

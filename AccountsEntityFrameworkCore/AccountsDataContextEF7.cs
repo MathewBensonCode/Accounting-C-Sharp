@@ -1,11 +1,10 @@
-﻿using AccountLib.Model;
-using AccountLib.Model.Accounts;
-using AccountLib.Model.BusinessEntities;
-using AccountLib.Model.Source_Documents;
+﻿using AccountLib.Model.BusinessEntities;
 using AccountLib.Model.SourceDocuments;
-using AccountLib.Model.TradeItems;
-using AccountLib.Model.Transactions;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Classes.Accounts;
 using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Classes.TradeItems;
+using AccountsModelCore.Classes.Transactions;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccountsEntityFrameworkCore

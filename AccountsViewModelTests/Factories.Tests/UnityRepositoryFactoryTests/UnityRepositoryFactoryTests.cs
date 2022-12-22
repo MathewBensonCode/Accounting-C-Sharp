@@ -1,17 +1,17 @@
-﻿using Accounts.Repositories;
+﻿using System.Collections.Generic;
+using AccountsViewModel.Factories.Interfaces.RepositoryFactories;
+using AccountsViewModel.Factories.Unity.RepositoryFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
 using AutoFixture.Xunit2;
 using Moq;
-using System.Collections.Generic;
-using AccountsViewModel.Factories.Repositories.Interfaces;
-using AccountsViewModel.Factories.Unity.RepositoryFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
 using Unity;
 using Unity.Resolution;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityRepositoryFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityRepositoryFactoryTests
 {
-    abstract public class UnityRepositoryFactoryTests<T>  where T:class
+    public abstract class UnityRepositoryFactoryTests<T> where T : class
     {
         [Theory, AutoCatalogData]
         public void ShouldImplementIRepositoryFactory(
@@ -23,7 +23,7 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityRepositoryFactoryTe
 
         [Theory, AutoCatalogData]
         public void ShouldCreateDefaultRepository(
-            [Frozen]Mock<IUnityContainer> container,
+            [Frozen] Mock<IUnityContainer> container,
             Mock<IRepository<T>> repository,
             RepositoryFactory<T> sut
             )
@@ -34,14 +34,14 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityRepositoryFactoryTe
 
         [Theory, AutoCatalogData]
         public void ShouldCreateChildRepositoryForCollection(
-            [Frozen]Mock<IUnityContainer> container,
+            [Frozen] Mock<IUnityContainer> container,
             Mock<ICollection<T>> collection,
             Mock<IRepository<T>> repository,
             RepositoryFactory<T> sut
             )
         {
             container.Setup(a => a.Resolve(typeof(IRepository<T>), "childcollection",
-                new ResolverOverride[] 
+                new ResolverOverride[]
                 {
                     new ParameterOverride("collection", collection.Object)
                 })).Returns(repository.Object);

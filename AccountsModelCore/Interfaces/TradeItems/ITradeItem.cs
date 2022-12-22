@@ -1,7 +1,7 @@
-﻿using AccountLib.Model.TradeItems;
+﻿using AccountsModelCore.Classes.TradeItems;
 using System.Collections.Generic;
 
-namespace AccountLib.Interfaces.TradeItems
+namespace AccountsModelCore.Interfaces.TradeItems
 {
     public interface ITradeItem
     {

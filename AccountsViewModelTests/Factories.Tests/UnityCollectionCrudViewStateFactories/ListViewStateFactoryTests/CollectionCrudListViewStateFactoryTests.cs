@@ -1,18 +1,18 @@
-﻿using Accounts.Repositories;
-using AutoFixture.Xunit2;
-using Moq;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
 using AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
 using Unity;
 using Unity.Resolution;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.ListViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.ListViewStateFactoryTests
 {
-    abstract public class UnityCollectionCrudListViewStateFactoryTests<T> where T: class
+    public abstract class UnityCollectionCrudListViewStateFactoryTests<T> where T : class
     {
         [Theory, AutoCatalogData]
         public void ShouldBeOfTypeICollectionCrudListViewStateFactory(
@@ -24,9 +24,9 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewS
 
         [Theory, AutoCatalogData]
         public void ShouldCreateACollectionListViewStateEntityUsingUnity(
-            [Frozen]Mock<IRepository<T>> repository,
-            [Frozen]Mock<IEntityCollectionViewModel<T>> collectionvm,
-            [Frozen]Mock<IUnityContainer> container,
+            [Frozen] Mock<IRepository<T>> repository,
+            [Frozen] Mock<IEntityCollectionViewModel<T>> collectionvm,
+            [Frozen] Mock<IUnityContainer> container,
             Mock<ICollectionListViewModelState<T>> liststate,
             CollectionCrudListViewStateFactory<T> sut
             )

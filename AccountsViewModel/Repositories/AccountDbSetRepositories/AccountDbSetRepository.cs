@@ -1,11 +1,11 @@
-using AccountLib.Model.Accounts;
-using Accounts.Repositories;
-using AccountsEntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using AccountsEntityFrameworkCore;
+using AccountsModelCore.Classes.Accounts;
+using AccountsViewModel.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace AccountsViewModel.Repositories
+namespace AccountsViewModel.Repositories.AccountDbSetRepositories
 {
     public class AccountDbSetRepository
         : DbSetRepository<Account>, IAccountRepository
@@ -13,16 +13,10 @@ namespace AccountsViewModel.Repositories
         public AccountDbSetRepository(AccountsDbContext context, int pageSize = 10)
         : base(context, pageSize)
         {
-           
+
         }
 
-        public AccountsDbContext AccountsDbContext
-        {
-            get
-            {
-                return _context as AccountsDbContext;
-            }
-        }
+        public AccountsDbContext AccountsDbContext => _context;
 
         public Account GetAccountWithTransactions(int id)
         {
@@ -69,8 +63,6 @@ namespace AccountsViewModel.Repositories
             return AccountsDbContext.Accounts.OfType<TradeItemAssetAccount>().ToList();
         }
 
-
-        
     }
 
 }

@@ -1,4 +1,4 @@
-﻿namespace AccountLib.Interfaces.Images
+﻿namespace AccountsModelCore.Interfaces.Images
 {
     public interface IDocumentImage
         : IDbModel

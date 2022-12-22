@@ -1,4 +1,4 @@
-namespace AccountLib.Interfaces.Transactions
+namespace AccountsModelCore.Interfaces.Transactions
 {
     public interface ICapitalDrawingTransaction
        : ITransaction

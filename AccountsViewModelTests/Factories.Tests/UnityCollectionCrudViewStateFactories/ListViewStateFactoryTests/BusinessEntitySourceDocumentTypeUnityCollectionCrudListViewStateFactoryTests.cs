@@ -1,9 +1,9 @@
-﻿using AccountLib.Model.Source_Documents;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.ListViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.ListViewStateFactoryTests
 {
-    public class BusinessEntitySourceDocumentTypeUnityCollectionCrudListViewStateFactoryTests:
-        UnityCollectionCrudListViewStateFactoryTests<BusinessEntitySourceDocumentType>   
+    public class BusinessEntitySourceDocumentTypeUnityCollectionCrudListViewStateFactoryTests :
+        UnityCollectionCrudListViewStateFactoryTests<BusinessEntitySourceDocumentType>
     {
     }
 }

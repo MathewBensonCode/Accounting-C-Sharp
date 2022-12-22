@@ -1,9 +1,9 @@
-﻿using Accounts.Repositories;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 using Unity.Resolution;
 
@@ -13,7 +13,7 @@ namespace AccountsViewModel.Factories.Unity.CommandViewModelFactories
         : ICommandViewModelFactory<T>
         where T : class
     {
-        IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
         public CollectionCommandViewModelFactory(IUnityContainer container)
         {

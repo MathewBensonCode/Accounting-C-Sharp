@@ -1,15 +1,15 @@
-﻿using AccountLib.Model.SourceDocuments;
-using AccountLib.Interfaces.SourceDocuments;
-using Moq;
-using System;
-using Xunit;
-using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
-using AccountsViewModel.EntityViewModels.Interfaces;
+﻿using System;
+using AccountLib.Model.SourceDocuments;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.SourceDocuments;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountLib.Model.Transactions;
 using AccountsViewModel.EntityViewModels.Classes;
 using AccountsViewModel.EntityViewModels.Classes.SourceDocuments;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using Moq;
+using Xunit;
 
 namespace AccountsViewModelTests.EntityViewModel.Tests.SourceDocuments
 {

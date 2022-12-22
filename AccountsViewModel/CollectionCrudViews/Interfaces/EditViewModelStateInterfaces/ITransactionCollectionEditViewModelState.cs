@@ -1,11 +1,9 @@
-﻿using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
-using AccountsViewModel.CollectionViewModels.Interfaces;
+﻿using AccountsModelCore.Classes.Transactions;
 
-namespace AccountsViewModel.CollectionCrudViews.Interfaces.AddViewModelStateIInterfaces
+namespace AccountsViewModel.CollectionCrudViews.Interfaces.EditViewModelStateInterfaces
 {
     public interface ITransactionCollectionEditViewModelState
-	    :ICollectionEditViewModelState<Transaction>
+        : ICollectionEditViewModelState<Transaction>
     {
     }
 }

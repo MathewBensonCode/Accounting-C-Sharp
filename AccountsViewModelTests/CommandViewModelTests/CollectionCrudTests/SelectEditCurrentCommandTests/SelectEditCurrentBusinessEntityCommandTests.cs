@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.BusinessEntities;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
 {
-    public class SelectEditCurrentBusinessEntityCommandTests:
+    public class SelectEditCurrentBusinessEntityCommandTests :
         SelectEditCurrentEntityCommandTests<BusinessEntity>
     {
     }

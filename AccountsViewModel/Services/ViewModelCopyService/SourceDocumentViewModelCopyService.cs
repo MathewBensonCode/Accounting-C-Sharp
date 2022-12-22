@@ -1,7 +1,6 @@
 ﻿using AccountLib.Model.SourceDocuments;
-using AccountLib.Model.Transactions;
 using AccountsModelCore.Classes.DocumentImages;
-using AccountsViewModel.EntityViewModels;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Services.Interfaces;
 

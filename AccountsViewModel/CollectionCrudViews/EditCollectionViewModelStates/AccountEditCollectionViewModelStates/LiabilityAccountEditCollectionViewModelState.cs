@@ -1,10 +1,10 @@
-﻿using AccountLib.Model.Accounts;
-using Accounts.Repositories;
+﻿using AccountsModelCore.Classes.Accounts;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.EditCollectionViewModelStates.AccountEditCollectionViewModelStates
 {
     public class LiabilityAccountEditCollectionViewModelState
         : EditEntityInCollectionViewModelState<LiabilityAccount>, ICollectionEditViewModelState<LiabilityAccount>

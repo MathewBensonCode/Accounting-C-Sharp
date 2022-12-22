@@ -1,8 +1,9 @@
 ﻿using AccountLib.Model.BusinessEntities;
 using AccountsViewModel.CollectionCrudViews;
+using AccountsViewModel.CollectionCrudViews.EditCollectionViewModelStates;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.CommandViewModels.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using Moq;
 using Prism.Commands;
 using Xunit;
@@ -33,7 +34,6 @@ namespace AccountsViewModelTests.CollectionViewModelStates.EditCollectionViewMod
             _ = Businessentitycommandviewmodelfactory.Setup(a => a.CreateSaveEditCommand(Sut as ICollectionEditViewModelState<BusinessEntity>, Businessentitylistcollectionviewmodelstate.Object, Businessentityrepository.Object, Businessentitycollectionviewmodel.Object))
                 .Returns(editcommandviewmodel.Object);
         }
-
 
         [Fact]
         public void ShouldCreateSaveCommandForEditEntity()

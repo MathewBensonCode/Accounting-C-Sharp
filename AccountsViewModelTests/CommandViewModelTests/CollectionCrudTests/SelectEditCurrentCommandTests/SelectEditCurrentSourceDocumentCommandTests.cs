@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.SourceDocuments;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
 {
-    public class SelectEditCurrentSourceDocumentCommandTests:
+    public class SelectEditCurrentSourceDocumentCommandTests :
         SelectEditCurrentEntityCommandTests<SourceDocument>
     {
     }

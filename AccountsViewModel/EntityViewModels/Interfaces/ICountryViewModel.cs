@@ -1,5 +1,5 @@
-﻿using AccountLib.Interfaces;
-using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces;
 
 namespace AccountsViewModel.EntityViewModels.Interfaces
 {

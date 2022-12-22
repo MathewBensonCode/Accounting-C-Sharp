@@ -1,7 +1,7 @@
-﻿using Accounts.Repositories;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 using Unity.Resolution;
 
@@ -11,7 +11,7 @@ namespace AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories
         ICollectionCrudViewStateFactory<T>
         where T : class
     {
-        IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
         public CollectionCrudViewStateFactory(IUnityContainer container)
         {
@@ -36,7 +36,7 @@ namespace AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories
                     new ParameterOverride("repository", repository),
                     new ParameterOverride("collection", collectionvm)
                 }
-                
+
                 ) as ICollectionListViewModelState<T>;
         }
     }

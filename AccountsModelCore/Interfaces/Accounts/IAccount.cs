@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using AccountLib.Model.Transactions;
+using AccountsModelCore.Classes.Transactions;
 
-namespace AccountLib.Interfaces.Accounts
+namespace AccountsModelCore.Interfaces.Accounts
 {
     public interface IAccount
        : IDbModel

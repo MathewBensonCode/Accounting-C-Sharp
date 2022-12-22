@@ -1,7 +1,7 @@
-﻿using AccountLib.Interfaces.Accounts;
-using AccountLib.Interfaces.SourceDocuments;
-using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountLib.Model.Transactions;
+﻿using AccountsViewModel.CollectionViewModels.Interfaces;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.SourceDocuments;
+using AccountsModelCore.Interfaces.Accounts;
 
 namespace AccountsViewModel.Factories.Interfaces.CollectionViewModels
 {

@@ -1,6 +1,6 @@
-﻿using AccountLib.Model.Source_Documents;
-using AccountsViewModel.CollectionViewModels.Interfaces;
+﻿using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsModelCore.Interfaces.BusinessEntities;
+using AccountsModelCore.Classes;
 
 namespace AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories
 {

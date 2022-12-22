@@ -1,17 +1,17 @@
-﻿using AutoFixture.Xunit2;
-using Moq;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.CommandViewModels.CollectionCommands;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Services.Interfaces;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
 {
-    abstract public class SaveEditToCollectionCommandTests<T> where T : class
+    public abstract class SaveEditToCollectionCommandTests<T> where T : class
     {
         [Theory, AutoCatalogData]
         public void ShouldBeOfTypeICommand(
@@ -39,8 +39,8 @@ namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTest
 
         [Theory, AutoCatalogData]
         public void ShouldChangeToListViewModelState(
-            [Frozen]Mock<IEntityCollectionViewModel<T>> collectionViewModel,
-            [Frozen]Mock<ICollectionListViewModelState<T>> listViewModelState,
+            [Frozen] Mock<IEntityCollectionViewModel<T>> collectionViewModel,
+            [Frozen] Mock<ICollectionListViewModelState<T>> listViewModelState,
             SaveEditedEntityCommand<T> sut
             )
         {

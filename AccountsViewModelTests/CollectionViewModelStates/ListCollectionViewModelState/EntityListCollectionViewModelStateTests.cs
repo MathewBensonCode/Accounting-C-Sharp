@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using Accounts.Repositories;
 using AccountsViewModel.CollectionCrudViews;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.CommandViewModels.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
 using AccountsViewModel.Repositories.Interfaces;

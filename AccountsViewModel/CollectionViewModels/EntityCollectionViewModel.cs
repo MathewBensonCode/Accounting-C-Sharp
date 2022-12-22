@@ -1,15 +1,15 @@
-﻿using Accounts.Repositories;
-using Prism.Mvvm;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Prism.Mvvm;
 
 namespace AccountsViewModel.CollectionViewModels
 {
-    public class EntityCollectionViewModel<T>:
-        BindableBase, IEntityCollectionViewModel<T> where T: class
+    public class EntityCollectionViewModel<T> :
+        BindableBase, IEntityCollectionViewModel<T> where T : class
     {
-        ICollectionViewModelState<T> _currentCollectionViewState;
+        private ICollectionViewModelState<T> _currentCollectionViewState;
 
         public EntityCollectionViewModel(
             IRepository<T> repository,
@@ -21,16 +21,13 @@ namespace AccountsViewModel.CollectionViewModels
 
         public ICollectionViewModelState<T> CollectionViewState
         {
-            get
-            {
-                return _currentCollectionViewState;
-            }
+            get => _currentCollectionViewState;
 
             set
             {
                 _currentCollectionViewState = value;
                 RaisePropertyChanged();
             }
-        }   
+        }
     }
 }

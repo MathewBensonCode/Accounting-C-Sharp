@@ -1,12 +1,11 @@
-﻿using AccountLib.Model.Accounts;
-using Accounts.Repositories;
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Interfaces.Transactions;
-using AccountsViewModel.EntityViewModels;
+﻿using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Interfaces.Accounts;
+using AccountsModelCore.Interfaces.Transactions;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 using Unity.Resolution;
-using AccountsViewModel.Entity.Interfaces;
 
 namespace AccountsViewModel.Factories.Unity.ViewModelFactories
 {
@@ -29,28 +28,44 @@ namespace AccountsViewModel.Factories.Unity.ViewModelFactories
             IAccountViewModel accountvm = null;
 
             if (transaction is IAssetPurchaseTransaction)
+            {
                 accountvm = ResolveAccountType<AssetAccount>(account);
+            }
 
             if (transaction is IAssetSaleTransaction)
+            {
                 accountvm = ResolveAccountType<CurrencyAccount>(account);
+            }
 
             if (transaction is ICapitalAdditionTransaction)
+            {
                 accountvm = ResolveAccountType<CurrencyAccount>(account);
+            }
 
             if (transaction is ICapitalDrawingTransaction)
+            {
                 accountvm = ResolveAccountType<CapitalAccount>(account);
+            }
 
             if (transaction is IExpenseTransaction)
+            {
                 accountvm = ResolveAccountType<ExpenseAccount>(account);
+            }
 
             if (transaction is IIncomeTransaction)
+            {
                 accountvm = ResolveAccountType<CurrencyAccount>(account);
+            }
 
             if (transaction is ILiabilityDecreaseTransaction)
+            {
                 accountvm = ResolveAccountType<LiabilityAccount>(account);
+            }
 
             if (transaction is ILiabilityIncreaseTransaction)
+            {
                 accountvm = ResolveAccountType<CurrencyAccount>(account);
+            }
 
             return accountvm;
 
@@ -62,32 +77,49 @@ namespace AccountsViewModel.Factories.Unity.ViewModelFactories
             IAccountViewModel accountvm = null;
 
             if (transaction is IAssetPurchaseTransaction)
+            {
                 accountvm = ResolveAccountType<CurrencyAccount>(account);
+            }
 
             if (transaction is IAssetSaleTransaction)
+            {
                 accountvm = ResolveAccountType<AssetAccount>(account);
+            }
 
             if (transaction is ICapitalAdditionTransaction)
+            {
                 accountvm = ResolveAccountType<CapitalAccount>(account);
+            }
 
             if (transaction is ICapitalDrawingTransaction)
+            {
                 accountvm = ResolveAccountType<CurrencyAccount>(account);
+            }
 
             if (transaction is IExpenseTransaction)
+            {
                 accountvm = ResolveAccountType<CurrencyAccount>(account);
+            }
 
             if (transaction is IIncomeTransaction)
+            {
                 accountvm = ResolveAccountType<IncomeAccount>(account);
+            }
 
             if (transaction is ILiabilityDecreaseTransaction)
+            {
                 accountvm = ResolveAccountType<CurrencyAccount>(account);
+            }
 
             if (transaction is ILiabilityIncreaseTransaction)
+            {
                 accountvm = ResolveAccountType<LiabilityAccount>(account);
+            }
+
             return accountvm;
         }
 
-        IAccountViewModel ResolveAccountType<T>(IAccount account) where T : Account
+        private IAccountViewModel ResolveAccountType<T>(IAccount account) where T : Account
         {
             return _unityContainer.Resolve(typeof(IEntityViewModel<T>), null, new ResolverOverride[] { new ParameterOverride("entity", account) }) as IAccountViewModel;
         }

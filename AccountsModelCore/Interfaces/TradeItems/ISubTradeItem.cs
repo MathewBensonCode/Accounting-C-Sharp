@@ -1,6 +1,6 @@
-﻿using AccountLib.Model.TradeItems;
+﻿using AccountsModelCore.Classes.TradeItems;
 
-namespace AccountLib.Interfaces.TradeItems
+namespace AccountsModelCore.Interfaces.TradeItems
 {
     public interface ISubTradeItem
     {

@@ -1,4 +1,4 @@
-﻿using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 
 namespace AccountsViewModel.EntityViewModels.Interfaces
 {

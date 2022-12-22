@@ -1,9 +1,8 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model.Source_Documents;
-using AccountLib.Interfaces.SourceDocuments;
-using AccountsViewModel.EntityViewModels;
+﻿using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces.SourceDocuments;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 using Unity.Resolution;
 
@@ -12,14 +11,14 @@ namespace AccountsViewModel.Factories.Unity.ViewModelFactories
     public class BusinessEntitySourceDocumentTypeUnityViewModelFactory :
         UnityViewModelFactory<BusinessEntitySourceDocumentType>, IBusinessEntitySourceDocumentTypeViewModelFactory
     {
-        IRepository<BusinessEntitySourceDocumentType> _repository;
+        private readonly IRepository<BusinessEntitySourceDocumentType> _repository;
 
         public BusinessEntitySourceDocumentTypeUnityViewModelFactory(
             IRepository<BusinessEntitySourceDocumentType> repository,
-            IUnityContainer container) : 
+            IUnityContainer container) :
             base(container)
         {
-            this._repository = repository;
+            _repository = repository;
         }
 
         public IBusinessEntitySourceDocumentTypeViewModel GetBusinessEntitySourceDocumentTypeViewModelForSourceDocument(ISourceDocument sourceDocument)

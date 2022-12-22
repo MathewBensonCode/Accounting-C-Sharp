@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Accounts;
+﻿using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
 {
-    public class SaveEditAccountToCollectionCommandTests:
+    public class SaveEditAccountToCollectionCommandTests :
         SaveEditToRepositoryCommandTests<Account>
     {
     }

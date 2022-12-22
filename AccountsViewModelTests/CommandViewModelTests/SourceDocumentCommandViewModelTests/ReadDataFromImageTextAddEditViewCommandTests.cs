@@ -1,5 +1,4 @@
 ﻿using AccountLib.Model.SourceDocuments;
-using AccountLib.Interfaces;
 using Moq;
 using System.Collections.Generic;
 using System.Windows.Input;
@@ -9,6 +8,7 @@ using Xunit;
 using AccountsViewModel.Services.Interfaces;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Interfaces;
 
 namespace AccountsViewModelTests.CommandViewModelTests.SourceDocumentCommandViewModelTests
 {

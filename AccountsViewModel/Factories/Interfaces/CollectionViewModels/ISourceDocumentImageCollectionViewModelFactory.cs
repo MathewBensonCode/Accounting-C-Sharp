@@ -1,6 +1,6 @@
-﻿using AccountLib.Interfaces.SourceDocuments;
-using AccountsViewModel.CollectionViewModels.Interfaces;
+﻿using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Interfaces.SourceDocuments;
 
 namespace AccountsViewModel.Factories.Interfaces.CollectionViewModels
 {

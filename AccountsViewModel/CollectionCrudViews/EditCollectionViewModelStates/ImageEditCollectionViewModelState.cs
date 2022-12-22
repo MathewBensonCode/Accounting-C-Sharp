@@ -1,10 +1,10 @@
-using Accounts.Repositories;
 using AccountsModelCore.Classes.DocumentImages;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.EditCollectionViewModelStates
 {
     public class ImageEditCollectionViewModelState
         : EditEntityInCollectionViewModelState<DocumentImage>, ICollectionEditViewModelState<DocumentImage>

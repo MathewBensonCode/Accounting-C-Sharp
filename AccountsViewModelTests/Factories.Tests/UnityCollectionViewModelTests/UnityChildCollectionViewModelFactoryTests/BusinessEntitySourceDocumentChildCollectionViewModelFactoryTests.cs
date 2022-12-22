@@ -1,27 +1,24 @@
-﻿using AccountLib.Model.Source_Documents;
-using AccountLib.Interfaces;
-using AccountsRepositoriesCore.Interfaces;
-using Moq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces.BusinessEntities;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Unity.CollectionViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
-using AccountsModelCore.Interfaces.BusinessEntities;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
 {
     public class BusinessEntitySourceDocumentTypeChildCollectionViewModelFactoryTests
     {
-        Mock<IBusinessEntitySourceDocumentType> businessEntitySourceDocumentType;
-        Mock<ICollection<BusinessEntitySourceDocumentType>> businessEntitySourceDocumentTypeCollection;
-        Mock<ICollectionViewModelFactory<BusinessEntitySourceDocumentType>> businessEntitySourceDocumentTypeCollectionViewModelFactory;
-        Mock<IBusinessEntitySourceDocumentTypeRepository> repository;
-        Mock<IBusinessEntity> businessEntity;
-        BusinessEntitySourceDocumentTypeChildCollectionViewModelFactory sut;
+        private readonly Mock<ICollection<BusinessEntitySourceDocumentType>> businessEntitySourceDocumentTypeCollection;
+        private readonly Mock<ICollectionViewModelFactory<BusinessEntitySourceDocumentType>> businessEntitySourceDocumentTypeCollectionViewModelFactory;
+        private readonly Mock<IBusinessEntitySourceDocumentTypeRepository> repository;
+        private readonly Mock<IBusinessEntity> businessEntity;
+        private readonly BusinessEntitySourceDocumentTypeChildCollectionViewModelFactory sut;
 
         public BusinessEntitySourceDocumentTypeChildCollectionViewModelFactoryTests()
         {
-            businessEntitySourceDocumentType = new Mock<IBusinessEntitySourceDocumentType>();
             businessEntitySourceDocumentTypeCollection = new Mock<ICollection<BusinessEntitySourceDocumentType>>();
             businessEntitySourceDocumentTypeCollectionViewModelFactory = new Mock<ICollectionViewModelFactory<BusinessEntitySourceDocumentType>>();
             businessEntity = new Mock<IBusinessEntity>();
@@ -56,7 +53,7 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
         {
             businessEntity.SetupProperty(a => a.BusinessEntitySourceDocumentTypes);
             businessEntity.Object.BusinessEntitySourceDocumentTypes = businessEntitySourceDocumentTypeCollection.Object;
-            
+
             sut.GetBusinessEntitySourceDocumentTypeCollectionViewModelForBusinessEntity(businessEntity.Object);
             businessEntitySourceDocumentTypeCollectionViewModelFactory
                 .Verify(a => a.CreateNewCollectionViewModel(businessEntitySourceDocumentTypeCollection.Object), Times.Once);

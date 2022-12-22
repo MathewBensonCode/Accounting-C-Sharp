@@ -1,5 +1,5 @@
-﻿using AccountsViewModel.EntityViewModels;
-using AccountsViewModel.Factories.Interfaces;
+﻿using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using Unity;
 using Unity.Resolution;
 

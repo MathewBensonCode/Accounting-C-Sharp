@@ -3,7 +3,7 @@
 namespace AccountsViewModel.CollectionViewModels.Interfaces
 {
     public interface ISourceDocumentCollectionViewModel
-        :IEntityCollectionViewModel<SourceDocument>
+        : IEntityCollectionViewModel<SourceDocument>
     {
     }
 }

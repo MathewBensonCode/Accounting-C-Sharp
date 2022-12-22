@@ -1,5 +1,5 @@
 ﻿using AccountLib.Model.BusinessEntities;
-using AccountLib.Model.Source_Documents;
+using AccountsModelCore.Classes;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Services.Interfaces;
 
@@ -14,20 +14,18 @@ namespace AccountsViewModel.Services.ViewModelCopyService
             IViewModelCollectionCopyService<BusinessEntitySourceDocumentType> businessEntitySourceDocumentTypesCollectionCopyService
             )
         {
-            this._businessEntitySourceDocumentTypesCollectionCopyService = businessEntitySourceDocumentTypesCollectionCopyService;
+            _businessEntitySourceDocumentTypesCollectionCopyService = businessEntitySourceDocumentTypesCollectionCopyService;
         }
         public void CopyEntityViewModel(
-            EntityViewModels.IEntityViewModel<BusinessEntity> copyfrom, 
-            EntityViewModels.IEntityViewModel<BusinessEntity> copyto)
+            IEntityViewModel<BusinessEntity> copyfrom,
+            IEntityViewModel<BusinessEntity> copyto)
         {
             var orig = copyfrom as IBusinessEntityViewModel;
             var copy = copyto as IBusinessEntityViewModel;
 
-
             copy.Name = orig.Name;
             copy.CountryId = orig.CountryId;
             copy.BusinessEntityNameRegex = orig.BusinessEntityNameRegex;
-          
 
             if (orig is IPersonBusinessEntityViewModel)
             {

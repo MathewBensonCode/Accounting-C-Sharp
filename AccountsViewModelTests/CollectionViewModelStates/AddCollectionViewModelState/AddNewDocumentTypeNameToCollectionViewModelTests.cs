@@ -1,9 +1,9 @@
-﻿using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.CollectionCrudViewModel.Tests.AddNewToCollectionTests
+namespace AccountsViewModelTests.CollectionViewModelStates.AddCollectionViewModelState
 {
     public class AddNewDocumentTypeNameToCollectionViewModelTests
-        :AddNewEntityToCollectionViewModelTests<DocumentTypeName>
+        : AddNewEntityToCollectionViewModelTests<DocumentTypeName>
     {
     }
 }

@@ -1,8 +1,8 @@
 ﻿using AccountsModelCore.Classes.DocumentImages;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
 {
-    public class SaveEditImageToCollectionCommandTests:
+    public class SaveEditImageToCollectionCommandTests :
         SaveEditToRepositoryCommandTests<DocumentImage>
     {
     }

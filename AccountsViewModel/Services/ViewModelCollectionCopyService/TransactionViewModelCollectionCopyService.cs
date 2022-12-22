@@ -1,6 +1,6 @@
-using AccountLib.Model.Transactions;
-using AccountLib.Interfaces.Transactions;
-using AccountsViewModel.Factories.Interfaces;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.Transactions;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Services.Interfaces;
 
 namespace AccountsViewModel.Services.ViewModelCollectionCopyService
@@ -19,24 +19,21 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
 
         protected override string GetEntityType(object entity)
         {
-                    if (entity is IAssetPurchaseTransaction)
-                        return "AssetPurchaseTransaction";
-                    else if (entity is IAssetSaleTransaction)
-                        return "AssetSaleTransaction";
-                    else if (entity is ICapitalAdditionTransaction)
-                        return "CapitalAdditionTransaction";
-                    else if (entity is ICapitalDrawingTransaction)
-                        return "CapitalDrawingTransaction";
-                    else if (entity is IExpenseTransaction)
-                        return "ExpenseTransaction";
-                    else if (entity is IIncomeTransaction)
-                        return "IncomeTransaction";
-                    else if (entity is ILiabilityDecreaseTransaction)
-                        return "LiabilityDecreaseTransaction";
-                    else if (entity is ILiabilityIncreaseTransaction)
-                        return "LiabilityIncreaseTransaction";
-                    else
-                        return base.GetEntityType(entity);
+            return entity is IAssetPurchaseTransaction
+                ? "AssetPurchaseTransaction"
+                : entity is IAssetSaleTransaction
+                    ? "AssetSaleTransaction"
+                    : entity is ICapitalAdditionTransaction
+                                    ? "CapitalAdditionTransaction"
+                                    : entity is ICapitalDrawingTransaction
+                                                    ? "CapitalDrawingTransaction"
+                                                    : entity is IExpenseTransaction
+                                                                    ? "ExpenseTransaction"
+                                                                    : entity is IIncomeTransaction
+                                                                                    ? "IncomeTransaction"
+                                                                                    : entity is ILiabilityDecreaseTransaction
+                                                                                                    ? "LiabilityDecreaseTransaction"
+                                                                                                    : entity is ILiabilityIncreaseTransaction ? "LiabilityIncreaseTransaction" : base.GetEntityType(entity);
         }
     }
 }

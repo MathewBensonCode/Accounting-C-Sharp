@@ -1,20 +1,21 @@
-﻿using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
-using Accounts.Repositories;
-using Moq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.Factories.TransactionAccountSelectionListFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.TransactionAccountSelectionListsFactories
+namespace AccountsViewModelTests.Factories.Tests.TransactionAccountSelectionListsFactories
 {
     public class ExpenseTransactionAccountSelectionListFactoryTests
         : TransactionAccountSelectionListFactoryTests<ExpenseTransaction>
     {
-        Mock<IRepository<Account>> repository;
-        Mock<ICollection<Account>> expenseaccounts;
-        Mock<ICollection<Account>> currencyaccounts;
-        ExpenseTransactionAccountSelectionListFactory sut;
+        private readonly Mock<IRepository<Account>> repository;
+        private readonly Mock<ICollection<Account>> expenseaccounts;
+        private readonly Mock<ICollection<Account>> currencyaccounts;
+        private readonly ExpenseTransactionAccountSelectionListFactory sut;
+
         public ExpenseTransactionAccountSelectionListFactoryTests()
         {
             repository = new Mock<IRepository<Account>>();

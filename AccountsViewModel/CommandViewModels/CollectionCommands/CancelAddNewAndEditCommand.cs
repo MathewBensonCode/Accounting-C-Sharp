@@ -11,7 +11,7 @@ namespace AccountsViewModel.CommandViewModels.CollectionCommands
         public CancelAddNewAndEditCommand(
              IEntityCollectionViewModel<T> collectionViewModel,
              ICollectionListViewModelState<T> listViewState
-            ) : 
+            ) :
             base(
                 () =>
                 {

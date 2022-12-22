@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace AccountsViewModel.EntityViewModels
+namespace AccountsViewModel.EntityViewModels.Interfaces
 {
     public interface IEntityViewModel<T>
         : INotifyPropertyChanged

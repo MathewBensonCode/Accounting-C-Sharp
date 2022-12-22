@@ -1,10 +1,10 @@
-﻿using AccountLib.Interfaces;
-using AccountLib.Interfaces.SourceDocuments;
-using AccountLib.Model.Source_Documents;
-using AccountLib.Model.Transactions;
-using AccountsModelCore.Classes.DocumentImages;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces;
+using AccountsModelCore.Interfaces.SourceDocuments;
 
 namespace AccountLib.Model.SourceDocuments
 

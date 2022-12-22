@@ -1,14 +1,14 @@
-﻿using AccountLib.Model.Accounts;
-using Accounts.Repositories;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.EntityViewModels;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
 using AccountsViewModel.Services.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.ListCollectionViewModelStates.AccountListCollectionViewModelStates
 {
     public class LiabilityAccountListCollectionViewModelState
         : EntityListCollectionViewModelState<LiabilityAccount>, ICollectionListViewModelState<Account>
@@ -29,11 +29,8 @@ namespace AccountsViewModel.CollectionCrudViews
 
         IEntityViewModel<Account> ICollectionViewModelState<Account>.EntityViewModel
         {
-            get => base.EntityViewModel as IEntityViewModel<Account>;
-            set
-            {
-                base.EntityViewModel = value as IEntityViewModel<LiabilityAccount>;
-            }
+            get => EntityViewModel as IEntityViewModel<Account>;
+            set => EntityViewModel = value as IEntityViewModel<LiabilityAccount>;
         }
     }
 }

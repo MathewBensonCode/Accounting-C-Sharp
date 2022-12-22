@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Transactions;
+﻿using AccountsModelCore.Classes.Transactions;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectAddNewCommandTests
 {
-    public class SelectAddNewTransactionCommandTests:
+    public class SelectAddNewTransactionCommandTests :
         SelectAddNewCommandTests<Transaction>
     {
     }

@@ -1,4 +1,4 @@
-using AccountLib.Model;
+using AccountsModelCore.Classes;
 
 namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.DeleteCurrentFromCollectionCommandTests
 {

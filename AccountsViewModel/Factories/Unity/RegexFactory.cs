@@ -8,7 +8,7 @@ namespace AccountsViewModel.Factories.Unity
     public class RegexFactory
         : IRegexFactory
     {
-        IUnityContainer _container;
+        private readonly IUnityContainer _container;
         public RegexFactory(IUnityContainer container)
         {
             _container = container;

@@ -1,10 +1,10 @@
-﻿using AccountLib.Interfaces.Transactions;
-using Prism.Commands;
+﻿using AccountsModelCore.Interfaces.BusinessEntities;
+using AccountsModelCore.Interfaces.Transactions;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.Factories.Interfaces;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Services.Interfaces;
-using AccountsModelCore.Interfaces.BusinessEntities;
+using Prism.Commands;
 
 namespace AccountsViewModel.CommandViewModels.CollectionCommands
 {

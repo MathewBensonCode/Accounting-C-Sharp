@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Accounts.Repositories;
-using System;
-using AccountLib.Interfaces;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using AccountsModelCore.Interfaces;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.Repositories
 {
@@ -10,8 +10,8 @@ namespace AccountsViewModel.Repositories
         : IRepository<T>
         where T : class, IDbModel
     {
-        ICollection<T> _collection;
-        int _pageSize = 10;
+        private readonly ICollection<T> _collection;
+        private readonly int _pageSize = 10;
 
         public ChildCollectionRepository(
             ICollection<T> collection
@@ -20,17 +20,11 @@ namespace AccountsViewModel.Repositories
             _collection = collection;
         }
 
-        public int Count
-        {
-            get
-            {
-                return _collection.Count;
-            }
-        }
+        public int Count => _collection.Count;
 
         public void AddRange(IEnumerable<T> entities)
         {
-            foreach(T t in entities)
+            foreach (T t in entities)
             {
                 _collection.Add(t);
             }
@@ -48,19 +42,20 @@ namespace AccountsViewModel.Repositories
 
         public T Find(int Id)
         {
-            foreach(T entity in _collection)
+            foreach (T entity in _collection)
             {
-                if (entity.Id ==Id)
+                if (entity.Id == Id)
                 {
                     return entity;
                 }
             }
+
             return null;
         }
 
         public IEnumerable<T> GetAll()
         {
-            return _collection as IEnumerable<T>;
+            return _collection;
         }
 
         public IEnumerable<T> GetDefault()
@@ -70,34 +65,27 @@ namespace AccountsViewModel.Repositories
 
         public IEnumerable<T> GetPageCollection(int Id)
         {
-            return _collection.Skip((Id -1) * _pageSize).Take(_pageSize).ToList() as IEnumerable<T>;
-         }
+            return _collection.Skip((Id - 1) * _pageSize).Take(_pageSize).ToList();
+        }
 
         public int GetPageSize()
         {
-                return _pageSize;
+            return _pageSize;
         }
 
         public void RemoveRange(IEnumerable<T> entities)
         {
             foreach (T entity in entities)
             {
-                if(_collection.Contains(entity))
-                {
-                    _collection.Remove(entity);
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }  
+                _ = _collection.Contains(entity) ? _collection.Remove(entity) : throw new ArgumentOutOfRangeException();
+            }
         }
 
         public void RemoveSingle(T entity)
         {
             if (_collection.Contains(entity))
             {
-                _collection.Remove(entity);
+                _ = _collection.Remove(entity);
                 return;
             }
             else

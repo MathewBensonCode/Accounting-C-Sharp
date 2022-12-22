@@ -1,4 +1,4 @@
-﻿using AccountsViewModel.EntityViewModels;
+﻿using AccountsViewModel.EntityViewModels.Interfaces;
 
 namespace AccountsViewModel.CollectionCrudViews.Interfaces
 {

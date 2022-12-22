@@ -1,6 +1,6 @@
-﻿using AccountLib.Interfaces.Accounts;
+﻿using AccountsModelCore.Interfaces.Accounts;
 
-namespace AccountLib.Model.Accounts
+namespace AccountsModelCore.Classes.Accounts
 {
     public class AssetAccount
         : Account, IAssetAccount

@@ -1,5 +1,5 @@
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Model.Accounts;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Interfaces.Accounts;
 using AccountsViewModel.EntityViewModels.Classes;
 using AccountsViewModel.EntityViewModels.Classes.Accounts;
 

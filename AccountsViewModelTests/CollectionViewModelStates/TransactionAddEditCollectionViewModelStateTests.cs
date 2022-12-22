@@ -1,15 +1,14 @@
 using System.ComponentModel;
-using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
-using Accounts.Repositories;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.CollectionCrudViews;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.CommandViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Moq;
 using Prism.Commands;
 using Xunit;
@@ -141,7 +140,6 @@ namespace AccountsViewModelTests.CollectionViewModelStates
             Debitaccountlistcollectionviewmodelstate.Object.EntityViewModel = Debitaccountviewmodel.Object;
             Debitaccountlistcollectionviewmodelstate.Raise(a => a.PropertyChanged += null, this, new PropertyChangedEventArgs("Entity"));
         }
-
 
         private void SetupPropertyChangedOnCreditAccountCollectionListViewModelState()
         {

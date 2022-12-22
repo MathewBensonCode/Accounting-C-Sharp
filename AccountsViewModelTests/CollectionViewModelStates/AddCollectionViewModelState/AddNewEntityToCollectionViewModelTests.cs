@@ -1,15 +1,15 @@
-﻿using Accounts.Repositories;
-using AccountsViewModel.CollectionCrudViews;
+﻿using AccountsViewModel.CollectionCrudViews;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.CommandViewModels.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Moq;
 using Prism.Commands;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.CollectionCrudViewModel.Tests
+namespace AccountsViewModelTests.CollectionViewModelStates.AddCollectionViewModelState
 {
     public abstract class AddNewEntityToCollectionViewModelTests<T> where T : class
     {
@@ -42,7 +42,6 @@ namespace AccountsViewModel.Xunit.Tests.CollectionCrudViewModel.Tests
             _ = Commandfactory.Setup(a => a.CreateCancelAddNewEditCommand(
                 It.IsAny<ICollectionListViewModelState<T>>(),
                 It.IsAny<IEntityCollectionViewModel<T>>())).Returns(Commandvm.Object);
-
 
             Sut = new AddNewEntityToCollectionViewModelState<T>(
                 ListViewModelState.Object,

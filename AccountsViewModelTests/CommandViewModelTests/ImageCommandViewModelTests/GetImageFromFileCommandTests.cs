@@ -1,13 +1,13 @@
 using System.Windows.Input;
 using AccountsViewModel.CommandViewModels.ImageCommands;
-using Xunit;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
-using Moq;
-using AccountsViewModelsCore.Services.Interfaces;
-using AutoFixture.Xunit2;
 using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using ImageServices.Services.Interfaces;
+using Moq;
+using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.ImageViewModelTests
+namespace AccountsViewModelTests.CommandViewModelTests.ImageCommandViewModelTests
 {
     public class GetImageFromFileCommandTests
     {

@@ -6,12 +6,12 @@ using Unity;
 using Unity.Resolution;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.RegexFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.RegexFactoryTests
 {
     public class RegexFactoryTests
     {
-        RegexFactory sut;
-        Mock<IUnityContainer> container;
+        private readonly RegexFactory sut;
+        private readonly Mock<IUnityContainer> container;
 
         public RegexFactoryTests()
         {

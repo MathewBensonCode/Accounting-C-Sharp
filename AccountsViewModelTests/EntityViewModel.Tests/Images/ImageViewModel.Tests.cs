@@ -1,13 +1,13 @@
-﻿using Moq;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
-using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
-using Xunit;
+﻿using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Interfaces.Images;
+using AccountsViewModel.CommandViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Classes;
 using AccountsViewModel.EntityViewModels.Classes.DocumentImages;
 using AccountsViewModel.EntityViewModels.Interfaces;
-using AccountsModelCore.Classes.DocumentImages;
-using AccountLib.Interfaces.Images;
+using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using Moq;
+using Xunit;
 
 namespace AccountsViewModelTests.EntityViewModel.Tests.Images
 {
@@ -24,7 +24,7 @@ namespace AccountsViewModelTests.EntityViewModel.Tests.Images
         protected override DocumentImage Entity { get; set; }
 
         private readonly DocumentImageViewModel sut;
-        private Mock<ISourceDocumentViewModel> sourcedocumentviewmodel;
+        private readonly Mock<ISourceDocumentViewModel> sourcedocumentviewmodel;
 
         public DocumentImageViewModelTests()
         {

@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.SourceDocuments;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
 {
-    public class SaveEditSourceDocumentToCollectionCommandTests:
+    public class SaveEditSourceDocumentToCollectionCommandTests :
         SaveEditToRepositoryCommandTests<SourceDocument>
     {
     }

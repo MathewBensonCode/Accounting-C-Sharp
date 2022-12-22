@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.SourceDocuments;
 
-namespace AccountsViewModel.Xunit.Tests.EntityCollectionViewModelTests
+namespace AccountsViewModelTests.EntityCollectionViewModelTests
 {
-    public class SourceDocumentCollectionViewModelTests:
+    public class SourceDocumentCollectionViewModelTests :
         EntityCollectionViewModelTests<SourceDocument>
     {
     }

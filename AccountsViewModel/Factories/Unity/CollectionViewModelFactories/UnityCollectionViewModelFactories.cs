@@ -1,9 +1,8 @@
-﻿using Accounts.Repositories;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
-using AccountsViewModel.Factories.Repositories.Interfaces;
+using AccountsViewModel.Factories.Interfaces.RepositoryFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 using Unity.Resolution;
 
@@ -13,18 +12,15 @@ namespace AccountsViewModel.Factories.Unity.CollectionViewModelFactories
         ICollectionViewModelFactory<T>
         where T : class
     {
-        IUnityContainer _container;
-        ICollectionCrudListViewStateFactory<T> _viewStateFactory;
-        IRepositoryFactory<T> _repositoryFactory;
+        private readonly IUnityContainer _container;
+        private readonly IRepositoryFactory<T> _repositoryFactory;
 
         public UnityCollectionViewModelFactory(
             IUnityContainer container,
-            ICollectionCrudListViewStateFactory<T> viewstatefactory,
             IRepositoryFactory<T> repositoryFactory
             )
         {
             _container = container;
-            _viewStateFactory = viewstatefactory;
             _repositoryFactory = repositoryFactory;
         }
 

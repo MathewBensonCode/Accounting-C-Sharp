@@ -1,6 +1,6 @@
-using AccountLib.Interfaces;
-using AccountLib.Model;
-using AccountsViewModel.EntityViewModels;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Factories.Unity.ViewModelFactories;
 using Moq;

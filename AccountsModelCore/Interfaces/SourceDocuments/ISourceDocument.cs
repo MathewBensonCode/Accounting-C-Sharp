@@ -1,9 +1,9 @@
-﻿using AccountLib.Model.Transactions;
-using AccountsModelCore.Classes.DocumentImages;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Classes.Transactions;
 
-namespace AccountLib.Interfaces.SourceDocuments
+namespace AccountsModelCore.Interfaces.SourceDocuments
 {
     public interface ISourceDocument
         : IDbModel

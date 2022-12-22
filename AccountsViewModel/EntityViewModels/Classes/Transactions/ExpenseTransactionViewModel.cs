@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using AccountLib.Interfaces.Transactions;
+using AccountsModelCore.Interfaces.Transactions;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 
 namespace AccountsViewModel.EntityViewModels.Classes.Transactions

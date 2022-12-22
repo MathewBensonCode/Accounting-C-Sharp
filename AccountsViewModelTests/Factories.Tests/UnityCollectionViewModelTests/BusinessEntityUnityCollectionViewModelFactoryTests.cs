@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.BusinessEntities;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests
 {
-    public class BusinessEntityUnityCollectionViewModelFactoryTests:
+    public class BusinessEntityUnityCollectionViewModelFactoryTests :
         UnityCollectionViewModelFactoryTests<BusinessEntity>
     {
     }

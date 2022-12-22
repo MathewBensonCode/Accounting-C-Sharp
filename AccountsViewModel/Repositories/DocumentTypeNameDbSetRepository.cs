@@ -1,12 +1,12 @@
 ﻿using AccountsEntityFrameworkCore;
-using AccountLib.Model;
+using AccountsModelCore.Classes;
 
 namespace AccountsViewModel.Repositories
 {
     public class DocumentTypeNameDbSetRepository :
         DbSetRepository<DocumentTypeName>
     {
-        public DocumentTypeNameDbSetRepository(AccountsDbContext context): 
+        public DocumentTypeNameDbSetRepository(AccountsDbContext context) :
             base(context)
         {
         }

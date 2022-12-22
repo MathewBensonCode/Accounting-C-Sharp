@@ -1,9 +1,8 @@
-﻿using AccountLib.Model.Accounts;
-using AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests;
+﻿using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests
 {
-    public class CancelAddNewAccountToCollectionCommandTests:
+    public class CancelAddNewAccountToCollectionCommandTests :
         CancelAddNewEntityToCollectionCommandTests<Account>
     {
     }

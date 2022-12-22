@@ -1,6 +1,6 @@
-﻿using Accounts.Repositories;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
+using AccountsViewModel.Repositories.Interfaces;
 using Prism.Commands;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
 
 namespace AccountsViewModel.CommandViewModels.NavigationCommands
 {

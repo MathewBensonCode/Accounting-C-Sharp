@@ -1,9 +1,6 @@
-﻿using AccountLib.Model.Accounts;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityRepositoryFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityRepositoryFactoryTests
 {
     public class UnityAssetAccountsRepositoryFactoryTests
         : UnityRepositoryFactoryTests<AssetAccount>

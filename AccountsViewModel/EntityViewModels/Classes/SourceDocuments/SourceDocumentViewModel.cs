@@ -1,7 +1,5 @@
 ﻿using System;
 using AccountLib.Model.SourceDocuments;
-using AccountLib.Model.Transactions;
-using AccountLib.Interfaces.SourceDocuments;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
@@ -9,6 +7,8 @@ using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.SourceDocuments;
 
 namespace AccountsViewModel.EntityViewModels.Classes.SourceDocuments
 {

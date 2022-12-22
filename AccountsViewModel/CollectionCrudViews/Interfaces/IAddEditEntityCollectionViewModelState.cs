@@ -1,4 +1,4 @@
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 
 namespace AccountsViewModel.CollectionCrudViews.Interfaces
 {

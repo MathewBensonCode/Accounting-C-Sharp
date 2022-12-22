@@ -1,13 +1,13 @@
 ﻿using AccountLib.Model.BusinessEntities;
 using AccountLib.Model.SourceDocuments;
-using Accounts.Repositories;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionCrudViews.Interfaces.AddViewModelStateIInterfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.AddCollectionViewModelStates
 {
     public class SourceDocumentAddCollectionViewModelState
         : SourceDocumentAddEditCollectionViewModelState, ISourceDocumentCollectionAddViewModelState

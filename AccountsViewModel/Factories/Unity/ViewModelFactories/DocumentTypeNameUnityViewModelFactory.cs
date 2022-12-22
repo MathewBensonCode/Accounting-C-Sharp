@@ -1,21 +1,21 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model;
-using AccountLib.Interfaces;
-using AccountsViewModel.EntityViewModels;
+﻿using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 
 namespace AccountsViewModel.Factories.Unity.ViewModelFactories
 {
-    public class DocumentTypeNameUnityViewModelFactory:
+    public class DocumentTypeNameUnityViewModelFactory :
         UnityViewModelFactory<DocumentTypeName>, IDocumentTypeNameViewModelFactory
     {
-        IRepository<DocumentTypeName> _repository;
+        private readonly IRepository<DocumentTypeName> _repository;
 
         public DocumentTypeNameUnityViewModelFactory(
             IRepository<DocumentTypeName> repository,
             IUnityContainer container
-            ):base(container)
+            ) : base(container)
         {
             _repository = repository;
         }

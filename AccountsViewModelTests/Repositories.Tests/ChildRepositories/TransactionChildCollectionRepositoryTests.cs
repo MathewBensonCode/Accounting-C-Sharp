@@ -1,9 +1,9 @@
-﻿using AccountLib.Model.Transactions;
+﻿using AccountsModelCore.Classes.Transactions;
 
-namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
+namespace AccountsViewModelTests.Repositories.Tests.ChildRepositories
 {
     public class TransactionChildCollectionRepositoryTests
-        :ChildCollectionRepositoryTests<Transaction>
+        : ChildCollectionRepositoryTests<Transaction>
     {
     }
 }

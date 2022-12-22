@@ -1,4 +1,4 @@
-﻿namespace AccountLib.Interfaces
+﻿namespace AccountsModelCore.Interfaces
 {
     public interface IBusinessEntitySourceDocumentType :
         IDbModel

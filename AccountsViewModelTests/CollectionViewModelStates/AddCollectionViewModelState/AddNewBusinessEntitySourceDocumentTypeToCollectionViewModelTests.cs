@@ -1,14 +1,12 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model;
-using AccountLib.Model.Source_Documents;
-using Moq;
-using AccountsViewModel.CollectionCrudViews;
+﻿using AccountsModelCore.Classes;
+using AccountsViewModel.CollectionCrudViews.AddCollectionViewModelStates;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
-using AccountsViewModel.Xunit.Tests.CollectionCrudViewModel.Tests;
 
 namespace AccountsViewModelTests.CollectionViewModelStates.AddCollectionViewModelState
 {
@@ -73,10 +71,8 @@ namespace AccountsViewModelTests.CollectionViewModelStates.AddCollectionViewMode
 
         //    (sut.DocumentTypeNames.CollectionViewState as ICollectionListViewModelState<DocumentTypeName>).Entity = currentDocumentTypeName.Object;
 
-
         //    propChanged.Raise(a => a.PropertyChanged += null, new PropertyChangedEventArgs("DocumentTypeNameId"));
         //    besd.VerifySet(a => a.DocumentTypeNameId = testid);
-
 
         //}
     }

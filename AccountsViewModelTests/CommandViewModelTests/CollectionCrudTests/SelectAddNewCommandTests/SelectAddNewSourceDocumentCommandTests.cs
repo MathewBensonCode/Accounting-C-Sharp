@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests
+﻿namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectAddNewCommandTests
 {
-    class SelectAddNewSourceDocumentCommandTests
+    internal class SelectAddNewSourceDocumentCommandTests
     {
     }
 }

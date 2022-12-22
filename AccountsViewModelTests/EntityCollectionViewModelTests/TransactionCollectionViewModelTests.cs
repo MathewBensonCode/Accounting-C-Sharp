@@ -1,5 +1,4 @@
-﻿using AccountLib.Model.Transactions;
-using AccountsViewModel.Xunit.Tests.EntityCollectionViewModelTests;
+﻿using AccountsModelCore.Classes.Transactions;
 
 namespace AccountsViewModelTests.EntityCollectionViewModelTests
 {

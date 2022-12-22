@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Source_Documents;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityRepositoryFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityRepositoryFactoryTests
 {
-    public class UnityBusinessEntitySourceDocumentTypeRepositoryFactoryTests:
+    public class UnityBusinessEntitySourceDocumentTypeRepositoryFactoryTests :
         UnityRepositoryFactoryTests<BusinessEntitySourceDocumentType>
     {
     }

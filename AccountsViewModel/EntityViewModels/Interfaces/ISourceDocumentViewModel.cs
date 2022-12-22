@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Transactions;
-using System;
+﻿using System;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsModelCore.Classes.DocumentImages;
 using AccountLib.Model.SourceDocuments;
+using AccountsModelCore.Classes.Transactions;
 
 namespace AccountsViewModel.EntityViewModels.Interfaces
 {

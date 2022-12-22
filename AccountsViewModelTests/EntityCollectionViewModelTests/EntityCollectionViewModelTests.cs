@@ -1,19 +1,19 @@
-﻿using Accounts.Repositories;
-using Moq;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.EntityCollectionViewModelTests
+namespace AccountsViewModelTests.EntityCollectionViewModelTests
 {
     public abstract class EntityCollectionViewModelTests<T> where T : class
     {
-        Mock<IRepository<T>> repository;
-        Mock<ICollectionListViewModelState<T>> listviewmodelstate;
-        Mock<ICollectionCrudListViewStateFactory<T>> listviewstatefactory;
-        EntityCollectionViewModel<T> sut;
+        private readonly Mock<IRepository<T>> repository;
+        private readonly Mock<ICollectionListViewModelState<T>> listviewmodelstate;
+        private readonly Mock<ICollectionCrudListViewStateFactory<T>> listviewstatefactory;
+        private readonly EntityCollectionViewModel<T> sut;
 
         public EntityCollectionViewModelTests()
         {

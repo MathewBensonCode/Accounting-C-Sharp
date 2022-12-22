@@ -1,8 +1,8 @@
-﻿using AccountLib.Interfaces.Transactions;
-using AccountLib.Model.Accounts;
-using AccountLib.Model.SourceDocuments;
+﻿using AccountLib.Model.SourceDocuments;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Interfaces.Transactions;
 
-namespace AccountLib.Model.Transactions
+namespace AccountsModelCore.Classes.Transactions
 {
     public class Transaction : ITransaction
     {

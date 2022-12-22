@@ -1,10 +1,10 @@
-﻿using Accounts.Repositories;
-using AccountsViewModel.CollectionCrudViews;
+﻿using AccountsViewModel.CollectionCrudViews;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.CommandViewModels.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Moq;
 using Prism.Commands;
 using Xunit;
@@ -52,7 +52,6 @@ namespace AccountsViewModelTests.CollectionViewModelStates.EditCollectionViewMod
                 It.IsAny<IEntityCollectionViewModel<T>>()
                 ))
                 .Returns(commandviewmodel.Object);
-
 
             sut = new EditEntityInCollectionViewModelState<T>(
                 listcollectionviewmodelstate.Object,

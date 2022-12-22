@@ -1,12 +1,11 @@
-﻿using Accounts.Repositories;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
+using AccountsViewModel.Repositories.Interfaces;
 using Prism.Commands;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
-using AccountsViewModel.EntityViewModels;
 
 namespace AccountsViewModel.CommandViewModels.CollectionCommands
 {
     public class DeleteCurrentEntityFromCollectionCommand<T> :
-        DelegateCommand where T: class
+        DelegateCommand where T : class
     {
         public DeleteCurrentEntityFromCollectionCommand(
             IRepository<T> repository,
@@ -14,16 +13,18 @@ namespace AccountsViewModel.CommandViewModels.CollectionCommands
             ) : base(
                 () =>
                 {
-                    if(repository.Contains(listViewState.EntityViewModel.Entity as T))
-                        repository.RemoveSingle(listViewState.EntityViewModel.Entity as T);
-                    
-                    listViewState.EntityCollection.Remove(listViewState.EntityViewModel);
+                    if (repository.Contains(listViewState.EntityViewModel.Entity))
+                    {
+                        repository.RemoveSingle(listViewState.EntityViewModel.Entity);
+                    }
+
+                    _ = listViewState.EntityCollection.Remove(listViewState.EntityViewModel);
                     listViewState.EntityViewModel = null;
                 }
                 ,
                 () =>
                 {
-                    return (listViewState.EntityViewModel != null);
+                    return listViewState.EntityViewModel != null;
                 }
                 )
         {

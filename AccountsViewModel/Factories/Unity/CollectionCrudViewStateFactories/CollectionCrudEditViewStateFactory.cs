@@ -1,16 +1,16 @@
-﻿using Accounts.Repositories;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 using Unity.Resolution;
 
 namespace AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories
 {
     public class CollectionCrudEditViewStateFactory<T>
-        :ICollectionCrudEditViewStateFactory<T> where T: class
+        : ICollectionCrudEditViewStateFactory<T> where T : class
     {
-        IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
         public CollectionCrudEditViewStateFactory(IUnityContainer container)
         {

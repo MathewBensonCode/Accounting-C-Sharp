@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 
-namespace AccountsViewModel.CommandViewModels.CollectionCommands
+namespace AccountsViewModel.CommandViewModels
 {
     public class CommandViewModel : ICommandViewModel
     {
@@ -10,7 +10,7 @@ namespace AccountsViewModel.CommandViewModels.CollectionCommands
             Command = command;
         }
 
-       public string CommandName => "Add New...";
+        public string CommandName => "Add New...";
 
         public ICommand Command { get; protected set; }
     }

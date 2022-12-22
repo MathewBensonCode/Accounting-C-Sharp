@@ -7,7 +7,7 @@ namespace AccountsViewModel.Services.ViewModelCopyService
     public class ImageViewModelCopyService
         : IViewModelCopyService<DocumentImage>
     {
-        public void CopyEntityViewModel(EntityViewModels.IEntityViewModel<DocumentImage> copyfrom, EntityViewModels.IEntityViewModel<DocumentImage> copyto)
+        public void CopyEntityViewModel(IEntityViewModel<DocumentImage> copyfrom, IEntityViewModel<DocumentImage> copyto)
         {
             var original = copyfrom as IDocumentImageViewModel;
             var copy = copyto as IDocumentImageViewModel;

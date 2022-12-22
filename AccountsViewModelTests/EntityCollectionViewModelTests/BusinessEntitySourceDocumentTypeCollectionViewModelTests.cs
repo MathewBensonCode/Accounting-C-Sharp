@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Source_Documents;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.EntityCollectionViewModelTests
+namespace AccountsViewModelTests.EntityCollectionViewModelTests
 {
-    public class BusinessEntitySourceDocumentTypeCollectionViewModelTests:
+    public class BusinessEntitySourceDocumentTypeCollectionViewModelTests :
         EntityCollectionViewModelTests<BusinessEntitySourceDocumentType>
     {
     }

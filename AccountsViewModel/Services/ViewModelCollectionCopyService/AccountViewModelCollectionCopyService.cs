@@ -1,6 +1,6 @@
-using AccountLib.Model.Accounts;
-using AccountLib.Interfaces.Accounts;
-using AccountsViewModel.Factories.Interfaces;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Interfaces.Accounts;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Services.Interfaces;
 
 namespace AccountsViewModel.Services.ViewModelCollectionCopyService
@@ -19,20 +19,15 @@ namespace AccountsViewModel.Services.ViewModelCollectionCopyService
 
         protected override string GetEntityType(object entity)
         {
-            if(entity is IAssetAccount)
-                return "AssetAccount";
-            else if(entity is ICapitalAccount)
-                return "CapitalAccount";
-            else if(entity is ICurrencyAccount)
-                return "CurrencyAccount";
-            else if(entity is IExpenseAccount)
-                return "ExpenseAccount";
-            else if(entity is IIncomeAccount)
-                return "IncomeAccount";
-            else if(entity is ILiabilityAccount)
-                return "LiabilityAccount";
-            else
-                return base.GetEntityType(entity);
+            return entity is IAssetAccount
+                ? "AssetAccount"
+                : entity is ICapitalAccount
+                    ? "CapitalAccount"
+                    : entity is ICurrencyAccount
+                                    ? "CurrencyAccount"
+                                    : entity is IExpenseAccount
+                                                    ? "ExpenseAccount"
+                                                    : entity is IIncomeAccount ? "IncomeAccount" : entity is ILiabilityAccount ? "LiabilityAccount" : base.GetEntityType(entity);
         }
     }
 }
