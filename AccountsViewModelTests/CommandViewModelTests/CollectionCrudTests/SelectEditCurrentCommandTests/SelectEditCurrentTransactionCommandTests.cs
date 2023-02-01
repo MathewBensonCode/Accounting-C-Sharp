@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Transactions;
+﻿using AccountsModelCore.Classes.Transactions;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectEditCurrentCommandTests
 {
-    public class SelectEditCurrentTransactionCommandTests:
+    public class SelectEditCurrentTransactionCommandTests :
         SelectEditCurrentEntityCommandTests<Transaction>
     {
     }

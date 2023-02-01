@@ -1,9 +1,9 @@
-﻿using AccountLib.Model.Transactions;
-using Accounts.Repositories;
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Interfaces.SourceDocuments;
-using AccountsViewModel.CollectionViewModels.Interfaces;
+﻿using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.SourceDocuments;
+using AccountsModelCore.Interfaces.Accounts;
 
 namespace AccountsViewModel.Factories.Unity.CollectionViewModelFactories
 {

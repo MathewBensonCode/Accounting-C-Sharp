@@ -1,9 +1,9 @@
 ﻿using AccountLib.Model.SourceDocuments;
 
-namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
+namespace AccountsViewModelTests.Repositories.Tests.ChildRepositories
 {
     public class SourceDocumentChildCollectionRepositoryTests
-        :ChildCollectionRepositoryTests<SourceDocument>
+        : ChildCollectionRepositoryTests<SourceDocument>
     {
     }
 }

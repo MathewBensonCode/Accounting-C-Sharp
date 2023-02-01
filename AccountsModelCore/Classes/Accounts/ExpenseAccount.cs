@@ -1,7 +1,7 @@
-﻿using AccountLib.Interfaces.Accounts;
-using AccountLib.Model.TradeItems;
+﻿using AccountsModelCore.Classes.TradeItems;
+using AccountsModelCore.Interfaces.Accounts;
 
-namespace AccountLib.Model.Accounts
+namespace AccountsModelCore.Classes.Accounts
 {
     public class ExpenseAccount : Account, IExpenseAccount
     {

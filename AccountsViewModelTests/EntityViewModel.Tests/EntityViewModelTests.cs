@@ -1,10 +1,10 @@
-﻿using AccountsViewModel.EntityViewModels;
-using AccountLib.Interfaces;
-using Xunit;
-using Moq;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Collections.Generic;
+using AccountsModelCore.Interfaces;
 using AccountsViewModel.EntityViewModels.Classes;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using Moq;
+using Xunit;
 
 namespace AccountsViewModelTests.EntityViewModel.Tests
 {
@@ -14,6 +14,7 @@ namespace AccountsViewModelTests.EntityViewModel.Tests
         protected Mock<IDictionary<string, List<string>>> ErrorCollection { get; set; }
         protected abstract T Entity { get; set; }
         protected abstract EntityViewModel<T> Sut { get; set; }
+
         public EntityViewModelTests()
         {
             ErrorCollection = new Mock<IDictionary<string, List<string>>>();

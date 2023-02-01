@@ -1,18 +1,16 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using AccountLib.Model.BusinessEntities;
-using AccountLib.Model.Source_Documents;
 using AccountLib.Model.SourceDocuments;
-using AccountLib.Model.Transactions;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.EntityViewModels;
 using AccountsViewModel.EntityViewModels.Interfaces;
-using AccountsViewModel.Factories.Interfaces;
 using AccountsViewModel.Factories.Interfaces.RegexFactories;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Services;
 using AccountsViewModel.Services.Interfaces;
-using AccountsViewModel.Xunit.Tests.Services.Tests;
 using Moq;
 using Xunit;
 
@@ -164,8 +162,7 @@ namespace AccountsViewModelTests.Services
                 .Returns(new Regex(DocumentTypeNameRegex3));
 
             sut = new SourceDocumentTextReadService(
-                  regexFactory.Object,
-                  transactionvmfactory.Object
+                  regexFactory.Object
             );
         }
 
@@ -188,18 +185,18 @@ namespace AccountsViewModelTests.Services
         [Fact]
         public void ShouldReturnNullFromFindBusinessEntityFromTextWhenNoMatchFound()
         {
-            _ = businessEntityViewModelCollection.Remove(businessentityviewmodel1.Object);
+            businessEntityViewModelCollection.Remove(businessentityviewmodel1.Object);
             sut.GetDetailsFromText(sourceDocumentAddEditCollectionViewModelState.Object);
             var entity = sourceDocumentAddEditCollectionViewModelState.Object.BusinessEntityCollectionViewModel.CollectionViewState.EntityViewModel;
             Assert.Null(entity);
         }
 
-        //[Fact]
-        //public void ShouldFindBusinessEntitySourceDocumentTypeFromCollectionInBusinessEntity()
-        //{
-        //var documenttype = sut.GetBusinessEntitySourceDocumentTypeFromText(SampleDocument.Text, businessEntityViewModel.Object);
-        //Assert.Equal((businessEntitySourceDocumentCollection as IList<BusinessEntitySourceDocumentType>)[1], documenttype);
-        //}
+        //        [Fact]
+        //        public void ShouldFindBusinessEntitySourceDocumentTypeFromCollectionInBusinessEntity()
+        //        {
+        //            var documenttype = sut.GetBusinessEntitySourceDocumentTypeFromText(SampleDocument.Text, (IBusinessEntity)businessentityviewmodel1.Object);
+        //            Assert.Equal(businessEntitySourceDocumentCollection[1], documenttype);
+        //        }
 
         //[Fact]
         //public void ShouldReturnNullIfBusinessEntitySourceDocumentTypeNotFoundForText()

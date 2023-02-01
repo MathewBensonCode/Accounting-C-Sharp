@@ -1,9 +1,9 @@
-﻿using AccountLib.Model.Accounts;
+﻿using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCommandViewModelFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCommandViewModelFactoryTests
 {
     public class AssetAccountCollectionCommandViewModelFactoryTests
-        :CollectionCommandViewModelFactoryTests<AssetAccount>
+        : CollectionCommandViewModelFactoryTests<AssetAccount>
     {
     }
 

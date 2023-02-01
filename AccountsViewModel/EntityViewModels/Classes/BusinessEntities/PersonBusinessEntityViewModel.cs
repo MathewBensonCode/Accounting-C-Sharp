@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using AccountLib.Model;
-using Accounts.Repositories;
+using AccountsModelCore.Classes;
 using AccountsModelCore.Interfaces.BusinessEntities;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.EntityViewModels.Classes.BusinessEntities
 {

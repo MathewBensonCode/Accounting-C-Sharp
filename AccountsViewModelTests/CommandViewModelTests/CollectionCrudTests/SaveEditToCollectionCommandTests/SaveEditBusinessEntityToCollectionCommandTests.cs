@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.BusinessEntities;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
 {
-    public class SaveEditBusinessEntityToCollectionCommandTests:
+    public class SaveEditBusinessEntityToCollectionCommandTests :
         SaveEditToRepositoryCommandTests<BusinessEntity>
     {
     }

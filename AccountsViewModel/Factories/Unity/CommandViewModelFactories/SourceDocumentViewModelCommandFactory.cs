@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
 using Unity;
 using Unity.Resolution;

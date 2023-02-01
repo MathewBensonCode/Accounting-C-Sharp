@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using AccountLib.Model;
 using AccountLib.Model.BusinessEntities;
-using Accounts.Repositories;
-using Moq;
+using AccountsModelCore.Classes;
 using AccountsViewModel.CollectionCrudViews;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
 
 namespace AccountsViewModelTests.CollectionViewModelStates

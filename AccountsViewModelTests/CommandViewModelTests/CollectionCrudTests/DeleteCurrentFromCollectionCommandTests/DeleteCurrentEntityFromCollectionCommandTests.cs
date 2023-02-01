@@ -1,12 +1,12 @@
-using Accounts.Repositories;
-using AutoFixture.Xunit2;
-using Moq;
 using System.Collections.Generic;
 using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CommandViewModels.CollectionCommands;
-using AccountsViewModel.EntityViewModels;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
 using Xunit;
 
 namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.DeleteCurrentFromCollectionCommandTests
@@ -93,8 +93,6 @@ namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.Delet
             sut.Execute();
             collectionviewstate.VerifySet(a => a.EntityViewModel = null);
         }
-
-
 
     }
 }

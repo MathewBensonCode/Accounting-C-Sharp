@@ -1,7 +1,7 @@
-using AccountLib.Model.Accounts;
 using System.Collections.Generic;
+using AccountsModelCore.Classes.Accounts;
 
-namespace Accounts.Repositories
+namespace AccountsViewModel.Repositories.Interfaces
 {
     public interface IAccountRepository : IRepository<Account>
     {

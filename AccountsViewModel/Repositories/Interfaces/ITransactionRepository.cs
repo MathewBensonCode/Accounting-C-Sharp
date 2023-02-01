@@ -1,9 +1,9 @@
-using AccountLib.Model.Transactions;
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Interfaces.SourceDocuments;
 using System.Collections.Generic;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.Accounts;
+using AccountsModelCore.Interfaces.SourceDocuments;
 
-namespace Accounts.Repositories
+namespace AccountsViewModel.Repositories.Interfaces
 {
     public interface ITransactionRepository : IRepository<Transaction>
     {
@@ -18,8 +18,5 @@ namespace Accounts.Repositories
         IEnumerable<Transaction> GetIncomeTransactions();
         IEnumerable<Transaction> GetLiabilityDecreaseTransactions();
         IEnumerable<Transaction> GetLiabilityIncreaseTransactions();
-        
-
-
     }
 }

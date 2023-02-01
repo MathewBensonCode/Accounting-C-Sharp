@@ -2,7 +2,7 @@ using AccountLib.Model.BusinessEntities;
 using AccountsModelCore.Interfaces.BusinessEntities;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 
-namespace AccountsViewModel.Factories.Interfaces.ColectionViewModelFactories
+namespace AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories
 {
 
     public interface IBusinessEntityChildCollectionViewModelFactory

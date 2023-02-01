@@ -1,7 +1,7 @@
-﻿using AccountLib.Interfaces.Accounts;
-using AccountLib.Model.BusinessEntities;
+﻿using AccountLib.Model.BusinessEntities;
+using AccountsModelCore.Interfaces.Accounts;
 
-namespace AccountLib.Model.Accounts
+namespace AccountsModelCore.Classes.Accounts
 {
     public class CapitalAccount : Account, ICapitalAccount
     {

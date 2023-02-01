@@ -1,8 +1,8 @@
-﻿using AccountLib.Interfaces;
-using AccountLib.Model.BusinessEntities;
+﻿using AccountLib.Model.BusinessEntities;
+using AccountsModelCore.Interfaces;
 using System.Collections.Generic;
 
-namespace AccountLib.Model
+namespace AccountsModelCore.Classes
 {
     public class Country : ICountry, IDbModel
     {

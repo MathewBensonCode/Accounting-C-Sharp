@@ -1,5 +1,5 @@
 ﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 
 namespace AccountsViewModel.Factories.Interfaces.CommandViewModelFactories
 {

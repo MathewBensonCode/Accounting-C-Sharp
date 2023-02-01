@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using AccountLib.Model;
-using Accounts.Repositories;
+using AccountsModelCore.Classes;
 using AccountsModelCore.Classes.DocumentImages;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.AddCollectionViewModelStates
 {
     public class ImageAddCollectionViewModelState
         : AddNewEntityToCollectionViewModelState<DocumentImage>, ICollectionAddViewModelState<DocumentImage>
@@ -15,7 +15,7 @@ namespace AccountsViewModel.CollectionCrudViews
             ICollectionListViewModelState<DocumentImage> listViewModelState,
             IRepository<DocumentImage> repository,
             IEntityCollectionViewModel<DocumentImage> collectionViewModel,
-            ICommandViewModelFactory<DocumentImage> commandfactory):
+            ICommandViewModelFactory<DocumentImage> commandfactory) :
             base(listViewModelState, repository, collectionViewModel, commandfactory)
         {
         }

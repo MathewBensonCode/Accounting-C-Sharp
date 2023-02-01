@@ -1,113 +1,113 @@
-using Accounts.Repositories;
-using AutoFixture.Xunit2;
-using Moq;
 using System.Collections.Generic;
 using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.CommandViewModels.CollectionCommands;
-using AccountsViewModel.EntityViewModels;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
 
 namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SaveNewToRepositoryCommandTests
 {
     public abstract class SaveNewEntityToRepositoryCommandTests<T> where T : class, new()
     {
+        protected SaveNewToRepositoryCommand<T> Sut { get; }
 
-        [Theory, AutoCatalogData]
-        public void ShouldBeOfTypeICommand(
-            SaveNewToRepositoryCommand<T> sut
-            )
+        protected T Entity { get; }
+
+        protected Mock<IEntityViewModel<T>> Entityvm { get; }
+
+        protected Mock<IRepository<T>> Repository { get; }
+
+        protected Mock<ISaveRepository> Saverepository { get; }
+
+        protected Mock<ICollectionAddViewModelState<T>> Addstate { get; }
+
+        protected Mock<IEntityCollectionViewModel<T>> Collectionviewmodel { get; }
+
+        protected Mock<ICollectionListViewModelState<T>> Liststate { get; }
+
+        protected Mock<ICollection<IEntityViewModel<T>>> Viewmodelcollection { get; }
+
+        public SaveNewEntityToRepositoryCommandTests()
         {
-            _ = Assert.IsAssignableFrom<ICommand>(sut);
+            Entity = new T();
+            Entityvm = new Mock<IEntityViewModel<T>>();
+            Repository = new Mock<IRepository<T>>();
+            Saverepository = Repository.As<ISaveRepository>();
+            Addstate = new Mock<ICollectionAddViewModelState<T>>();
+            Liststate = new Mock<ICollectionListViewModelState<T>>();
+            Collectionviewmodel = new Mock<IEntityCollectionViewModel<T>>();
+            Viewmodelcollection = new Mock<ICollection<IEntityViewModel<T>>>();
+
+            Addstate.Setup(a => a.EntityViewModel).Returns(Entityvm.Object);
+            Liststate.Setup(a => a.EntityCollection).Returns(Viewmodelcollection.Object);
+            Collectionviewmodel.Setup(a => a.CollectionViewState).Returns(Addstate.Object);
+            Entityvm.Setup(a => a.Entity).Returns(Entity);
+
+            Sut = new SaveNewToRepositoryCommand<T>(
+                    Collectionviewmodel.Object,
+                    Addstate.Object,
+                    Liststate.Object,
+                    Repository.Object);
         }
 
-        [Theory, AutoCatalogData]
-        public void ShouldAddNewEntityToCollection(
-            [Frozen] Mock<T> entity,
-            [Frozen] Mock<IEntityViewModel<T>> entityvm,
-            [Frozen] Mock<IRepository<T>> repository,
-            [Frozen] Mock<ICollectionAddViewModelState<T>> addstate,
-            [Frozen] Mock<IEntityCollectionViewModel<T>> collectionviewmodel,
-            SaveNewToRepositoryCommand<T> sut
-            )
+        [Fact]
+        public void ShouldBeOfTypeICommand()
         {
-            addstate.Setup(a => a.EntityViewModel).Returns(entityvm.Object);
-            collectionviewmodel.Setup(a => a.CollectionViewState).Returns(addstate.Object);
-            entityvm.Setup(a => a.Entity).Returns(entity.Object);
-            sut.Execute();
-            repository.Verify(a => a.AddSingle(entity.Object));
+            _ = Assert.IsAssignableFrom<ICommand>(Sut);
         }
 
-        [Theory, AutoCatalogData]
-        public void ShouldAddNewEntityViewModelToViewModelCollection(
-            [Frozen] Mock<IEntityViewModel<T>> entityvm,
-            [Frozen] Mock<ICollectionAddViewModelState<T>> addstate,
-            [Frozen] Mock<IEntityCollectionViewModel<T>> collectionviewmodel,
-            [Frozen] Mock<IList<IEntityViewModel<T>>> viewModelCollection,
-            [Frozen] Mock<ICollectionListViewModelState<T>> collectionViewState,
-            SaveNewToRepositoryCommand<T> sut
-            )
+        [Fact]
+        public void ShouldAddNewEntityToCollection()
         {
-            addstate.Setup(a => a.EntityViewModel).Returns(entityvm.Object);
-            collectionviewmodel.Setup(a => a.CollectionViewState).Returns(addstate.Object);
-            collectionViewState.Setup(a => a.EntityCollection).Returns(viewModelCollection.Object);
-            sut.Execute();
-            viewModelCollection.Verify(a => a.Add(entityvm.Object));
+            Sut.Execute();
+            Repository.Verify(a => a.AddSingle(Entity));
         }
 
-        [Theory, AutoCatalogData]
-        public void ShouldReturnToListViewAfterExecution(
-            [Frozen] Mock<IEntityViewModel<T>> entityvm,
-            [Frozen] Mock<IEntityCollectionViewModel<T>> entityCollectionViewModel,
-            [Frozen] Mock<ICollectionListViewModelState<T>> collectionViewState,
-            [Frozen] Mock<ICollectionAddViewModelState<T>> addstate,
-            [Frozen] Mock<IEntityCollectionViewModel<T>> collectionviewmodel,
-            SaveNewToRepositoryCommand<T> sut
-            )
+        [Fact]
+        public void ShouldAddNewEntityViewModelToViewModelCollection()
         {
-            addstate.Setup(a => a.EntityViewModel).Returns(entityvm.Object);
-            collectionviewmodel.Setup(a => a.CollectionViewState).Returns(addstate.Object);
-            sut.Execute();
-            entityCollectionViewModel.VerifySet(a => a.CollectionViewState = collectionViewState.Object);
+            Addstate.Setup(a => a.EntityViewModel).Returns(Entityvm.Object);
+            Collectionviewmodel.Setup(a => a.CollectionViewState).Returns(Addstate.Object);
+            Sut.Execute();
+            Viewmodelcollection.Verify(a => a.Add(Entityvm.Object));
         }
 
-        [Theory, AutoCatalogData]
-        public void ShouldNotExecuteUnlessValidationPasses(
-             Mock<IEntityViewModel<T>> entityvm,
-            [Frozen] Mock<ICollectionAddViewModelState<T>> addviewstate,
-            SaveNewToRepositoryCommand<T> sut)
+        [Fact]
+        public void ShouldReturnToListViewAfterExecution()
         {
-            entityvm.Setup(a => a.HasErrors).Returns(false);
-            entityvm.Setup(a => a.HasChanged).Returns(true);
-            addviewstate.Setup(a => a.EntityViewModel).Returns(entityvm.Object);
-            Assert.True(sut.CanExecute());
+            Addstate.Setup(a => a.EntityViewModel).Returns(Entityvm.Object);
+            Collectionviewmodel.Setup(a => a.CollectionViewState).Returns(Addstate.Object);
+            Sut.Execute();
+            Collectionviewmodel.VerifySet(a => a.CollectionViewState = Liststate.Object);
         }
 
-        [Theory, AutoCatalogData]
-        public void ShouldNotExecuteIfEntityViewModelHasErrors(
-            Mock<IEntityViewModel<T>> entityvm,
-            [Frozen] Mock<ICollectionAddViewModelState<T>> addviewstate,
-            SaveNewToRepositoryCommand<T> sut
-            )
+        [Fact]
+        public void ShouldNotExecuteUnlessValidationPasses()
         {
-            entityvm.Setup(a => a.HasErrors).Returns(true);
-            addviewstate.Setup(a => a.EntityViewModel).Returns(entityvm.Object);
-            Assert.False(sut.CanExecute());
+            Entityvm.Setup(a => a.HasErrors).Returns(false);
+            Entityvm.Setup(a => a.HasChanged).Returns(true);
+            Addstate.Setup(a => a.EntityViewModel).Returns(Entityvm.Object);
+            Assert.True(Sut.CanExecute());
         }
 
-        [Theory, AutoCatalogData]
-        public void ShouldNotExecuteIfEntityHasNotChanged(
-             Mock<IEntityViewModel<T>> entityvm,
-            [Frozen] Mock<ICollectionAddViewModelState<T>> addviewstate,
-            SaveNewToRepositoryCommand<T> sut
-            )
+        [Fact]
+        public void ShouldNotExecuteIfEntityViewModelHasErrors()
         {
-            entityvm.Setup(a => a.HasChanged).Returns(false);
-            entityvm.Setup(a => a.HasErrors).Returns(false);
-            addviewstate.Setup(a => a.EntityViewModel).Returns(entityvm.Object);
-            Assert.False(sut.CanExecute());
+            Entityvm.Setup(a => a.HasErrors).Returns(true);
+            Addstate.Setup(a => a.EntityViewModel).Returns(Entityvm.Object);
+            Assert.False(Sut.CanExecute());
+        }
+
+        [Fact]
+        public void ShouldNotExecuteIfEntityHasNotChanged()
+        {
+            Entityvm.Setup(a => a.HasChanged).Returns(false);
+            Entityvm.Setup(a => a.HasErrors).Returns(false);
+            Addstate.Setup(a => a.EntityViewModel).Returns(Entityvm.Object);
+            Assert.False(Sut.CanExecute());
         }
     }
 }

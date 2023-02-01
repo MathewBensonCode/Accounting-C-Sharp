@@ -1,10 +1,10 @@
 ﻿using AccountLib.Model.SourceDocuments;
-using Accounts.Repositories;
-using AccountLib.Interfaces.Transactions;
+using AccountsModelCore.Interfaces.Images;
+using AccountsModelCore.Interfaces.Transactions;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
-using AccountLib.Interfaces.Images;
 
 namespace AccountsViewModel.Factories.Unity.ViewModelFactories
 {

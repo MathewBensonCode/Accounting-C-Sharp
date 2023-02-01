@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using AccountLib.Model.Accounts;
-using AccountLib.Interfaces.Accounts;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
+using AccountsModelCore.Interfaces.Accounts;
+using AccountsModelCore.Classes.Accounts;
 
 namespace AccountsViewModel.EntityViewModels.Classes.Accounts
 {

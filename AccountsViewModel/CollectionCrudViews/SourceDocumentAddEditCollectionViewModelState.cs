@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Linq;
 using AccountLib.Model.BusinessEntities;
 using AccountLib.Model.SourceDocuments;
-using AccountLib.Model.Transactions;
-using Accounts.Repositories;
-using AccountLib.Model.Source_Documents;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.CommandViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
-using System.Linq;
-using AccountsModelCore.Classes.DocumentImages;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.CollectionCrudViews
 {

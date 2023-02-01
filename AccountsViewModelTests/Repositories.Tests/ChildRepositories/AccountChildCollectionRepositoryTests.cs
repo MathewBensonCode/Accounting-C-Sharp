@@ -1,9 +1,9 @@
-﻿using AccountLib.Model.Accounts;
+﻿using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
+namespace AccountsViewModelTests.Repositories.Tests.ChildRepositories
 {
     public class AssetAccountChildCollectionRepositoryTests
-        :ChildCollectionRepositoryTests<AssetAccount>
+        : ChildCollectionRepositoryTests<AssetAccount>
     {
     }
 

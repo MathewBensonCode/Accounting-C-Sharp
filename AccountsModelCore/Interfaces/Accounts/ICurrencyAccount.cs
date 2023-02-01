@@ -1,6 +1,6 @@
-﻿using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountLib.Interfaces.Accounts
+namespace AccountsModelCore.Interfaces.Accounts
 
 {
     public interface ICurrencyAccount : IAccount

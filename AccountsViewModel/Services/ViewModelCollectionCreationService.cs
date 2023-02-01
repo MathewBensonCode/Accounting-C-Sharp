@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using AccountsViewModel.EntityViewModels;
-using AccountsViewModel.Factories.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using AccountsViewModel.Services.Interfaces;
 
 namespace AccountsViewModel.Services
@@ -8,7 +8,7 @@ namespace AccountsViewModel.Services
     public class ViewModelCollectionCreationService<T> :
         IViewModelCollectionCreationService<T> where T : class
     {
-        IViewModelFactory<T> _viewModelFactory;
+        private readonly IViewModelFactory<T> _viewModelFactory;
 
         public ViewModelCollectionCreationService(IViewModelFactory<T> factory)
         {
@@ -21,7 +21,7 @@ namespace AccountsViewModel.Services
         {
             foreach (T entity in collection)
             {
-                vmCollection.Add(_viewModelFactory.CreateViewModelFromEntity(entity));   
+                vmCollection.Add(_viewModelFactory.CreateViewModelFromEntity(entity));
             }
         }
     }

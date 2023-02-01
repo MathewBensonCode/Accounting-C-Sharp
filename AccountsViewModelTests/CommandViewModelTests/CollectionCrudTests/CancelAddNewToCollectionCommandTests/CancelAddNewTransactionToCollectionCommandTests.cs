@@ -1,9 +1,8 @@
-﻿using AccountLib.Model.Transactions;
-using AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests;
+﻿using AccountsModelCore.Classes.Transactions;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests
 {
-    public class CancelAddNewTransactionToCollectionCommandTests:
+    public class CancelAddNewTransactionToCollectionCommandTests :
         CancelAddNewEntityToCollectionCommandTests<Transaction>
     {
     }

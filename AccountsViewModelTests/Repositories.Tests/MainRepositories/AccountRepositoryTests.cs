@@ -1,9 +1,9 @@
-using AccountLib.Model.Accounts;
-using Accounts.Repositories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsModelCore.Classes.Accounts;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
 using Xunit;
 
-namespace AccountsViewModelTests.RepositoryTests
+namespace AccountsViewModelTests.Repositories.Tests.MainRepositories
 {
     public class AccountsRepositoryTests
     {

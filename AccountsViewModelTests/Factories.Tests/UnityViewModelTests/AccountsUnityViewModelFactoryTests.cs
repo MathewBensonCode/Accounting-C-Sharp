@@ -1,10 +1,9 @@
-using AccountLib.Model.Accounts;
-using Accounts.Repositories;
-using AccountLib.Interfaces.Transactions;
-using Moq;
-using AccountsViewModel.EntityViewModels;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Interfaces.Transactions;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Unity.ViewModelFactories;
-using Unity;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Unity.Resolution;
 using Xunit;
 
@@ -22,7 +21,7 @@ namespace AccountsViewModelTests.Factories.Tests.UnityViewModelTests
         protected Mock<IIncomeTransaction> Incometransaction { get; set; }
         protected Mock<ILiabilityDecreaseTransaction> Liabilitydecreasetransaction { get; set; }
         protected Mock<ILiabilityIncreaseTransaction> Liabilityincreasetransaction { get; set; }
-        
+
         protected override UnityViewModelFactory<Account> Sut { get; set; }
 
         private readonly AccountUnityViewModelFactory sut;
@@ -72,7 +71,7 @@ namespace AccountsViewModelTests.Factories.Tests.UnityViewModelTests
         [Fact]
         public void ShouldCreateDebitCurrencyAccountViewModelWhenTransactionIsAssetSaleTransaction()
         {
-            sut.GetDebitAccountViewModelForTransaction(Assetsaletransaction.Object as ITransaction);
+            sut.GetDebitAccountViewModelForTransaction(Assetsaletransaction.Object);
             Container.Verify(a => a.Resolve(typeof(IEntityViewModel<CurrencyAccount>), null, new ResolverOverride[]
             {new ParameterOverride("entity", Entity.Object) }), Times.Once);
         }
@@ -80,7 +79,7 @@ namespace AccountsViewModelTests.Factories.Tests.UnityViewModelTests
         [Fact]
         public void ShouldCreateCreditAssetAccountViewModelWhenTransactionIsAssetSaleTransaction()
         {
-            sut.GetCreditAccountViewModelForTransaction(Assetsaletransaction.Object as ITransaction);
+            sut.GetCreditAccountViewModelForTransaction(Assetsaletransaction.Object);
             Container.Verify(a => a.Resolve(typeof(IEntityViewModel<AssetAccount>), null, new ResolverOverride[]
             {new ParameterOverride("entity", Entity.Object) }), Times.Once);
         }

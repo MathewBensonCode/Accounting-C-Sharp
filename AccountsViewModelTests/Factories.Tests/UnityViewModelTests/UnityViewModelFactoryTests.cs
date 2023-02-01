@@ -1,10 +1,10 @@
-﻿using Moq;
-using AccountsViewModel.EntityViewModels;
+﻿using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Unity.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Unity;
 using Unity.Resolution;
 using Xunit;
-using Accounts.Repositories;
 
 namespace AccountsViewModelTests.Factories.Tests.UnityViewModelTests
 {

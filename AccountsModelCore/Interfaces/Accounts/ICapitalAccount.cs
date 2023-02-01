@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.BusinessEntities;
 
-namespace AccountLib.Interfaces.Accounts
+namespace AccountsModelCore.Interfaces.Accounts
 {
-    public interface ICapitalAccount: IAccount
+    public interface ICapitalAccount : IAccount
     {
         int BusinessEntityId { get; set; }
         BusinessEntity Owner { get; set; }

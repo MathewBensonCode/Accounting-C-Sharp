@@ -1,9 +1,9 @@
-using Accounts.Repositories;
-using AccountsEntityFrameworkCore;
-using AccountLib.Interfaces.SourceDocuments;
 using System.Collections.Generic;
 using System.Linq;
+using AccountsEntityFrameworkCore;
 using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Interfaces.SourceDocuments;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.Repositories
 {

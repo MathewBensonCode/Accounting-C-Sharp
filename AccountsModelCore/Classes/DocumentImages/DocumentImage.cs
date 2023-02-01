@@ -1,6 +1,6 @@
-﻿using AccountLib.Interfaces;
-using AccountLib.Interfaces.Images;
-using AccountLib.Model.SourceDocuments;
+﻿using AccountLib.Model.SourceDocuments;
+using AccountsModelCore.Interfaces;
+using AccountsModelCore.Interfaces.Images;
 
 namespace AccountsModelCore.Classes.DocumentImages
 {

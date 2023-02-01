@@ -1,7 +1,7 @@
 ﻿using AccountLib.Model.BusinessEntities;
 using System.Collections.Generic;
 
-namespace AccountLib.Interfaces
+namespace AccountsModelCore.Interfaces
 {
     public interface ICountry
     {

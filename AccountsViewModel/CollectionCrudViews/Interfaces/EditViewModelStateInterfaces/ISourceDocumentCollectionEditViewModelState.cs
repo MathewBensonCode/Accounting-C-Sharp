@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.SourceDocuments;
 
-namespace AccountsViewModel.CollectionCrudViews.Interfaces.AddViewModelStateIInterfaces
+namespace AccountsViewModel.CollectionCrudViews.Interfaces.EditViewModelStateInterfaces
 {
-    public interface ISourceDocumentCollectionEditViewModelState 
+    public interface ISourceDocumentCollectionEditViewModelState
         : ICollectionEditViewModelState<SourceDocument>
     {
     }

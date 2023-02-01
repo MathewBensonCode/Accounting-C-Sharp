@@ -1,4 +1,4 @@
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
 
 namespace AccountsViewModel.Factories.Interfaces.CommandViewModelFactories

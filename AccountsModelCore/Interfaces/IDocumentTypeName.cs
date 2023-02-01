@@ -1,6 +1,6 @@
-﻿namespace AccountLib.Interfaces
+﻿namespace AccountsModelCore.Interfaces
 {
-    public interface IDocumentTypeName:
+    public interface IDocumentTypeName :
         IDbModel
     {
         string Name { get; set; }

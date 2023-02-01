@@ -1,4 +1,4 @@
-﻿using AccountLib.Model.Transactions;
+﻿using AccountsModelCore.Classes.Transactions;
 
 namespace AccountsViewModelTests.CommandViewModelTests.CollectionNavigationTests.GoToBeginningCollectionCommandTests
 {

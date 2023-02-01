@@ -1,25 +1,24 @@
-﻿using Accounts.Repositories;
-using AutoFixture.Xunit2;
-using Moq;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
 using Unity;
 using Unity.Resolution;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.EditViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.EditViewStateFactoryTests
 {
-    abstract public class UnityCollectionCrudEditViewStateFactoryTests<T> where T: class
+    public abstract class UnityCollectionCrudEditViewStateFactoryTests<T> where T : class
     {
-       
 
         [Theory, AutoCatalogData]
         public void ShouldCreateACollectionEditViewStateEntityUsingUnity(
-           [Frozen]Mock<IUnityContainer> container,
-           [Frozen]Mock<IEntityCollectionViewModel<T>> collectionvm,
-           [Frozen]Mock<IRepository<T>> repository,
+           [Frozen] Mock<IUnityContainer> container,
+           [Frozen] Mock<IEntityCollectionViewModel<T>> collectionvm,
+           [Frozen] Mock<IRepository<T>> repository,
            Mock<ICollectionListViewModelState<T>> liststate,
            Mock<ICollectionEditViewModelState<T>> editstate,
            CollectionCrudEditViewStateFactory<T> sut
@@ -36,7 +35,7 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewS
 
             Assert.IsAssignableFrom<ICollectionEditViewModelState<T>>(
                 sut.CreateEntityEditView(collectionvm.Object, repository.Object, liststate.Object));
-            
+
         }
 
     }

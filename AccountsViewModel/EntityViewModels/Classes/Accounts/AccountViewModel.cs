@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.Accounts;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.Entity.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 
 namespace AccountsViewModel.EntityViewModels.Classes.Accounts

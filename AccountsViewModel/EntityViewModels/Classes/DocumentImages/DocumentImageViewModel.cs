@@ -1,10 +1,10 @@
-﻿using AccountLib.Interfaces.Images;
-using AccountsViewModel.EntityViewModels.Interfaces;
-using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Interfaces.Images;
+using AccountsViewModel.CommandViewModels.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 
 namespace AccountsViewModel.EntityViewModels.Classes.DocumentImages
 {

@@ -1,17 +1,16 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model.Source_Documents;
-using AccountsRepositoriesCore.Interfaces;
+﻿using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces.BusinessEntities;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
-using AccountsModelCore.Interfaces.BusinessEntities;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.Factories.Unity.CollectionViewModelFactories
 {
     public class BusinessEntitySourceDocumentTypeChildCollectionViewModelFactory :
         IBusinessEntitySourceDocumentTypeChildCollectionViewModelFactory
     {
-        private IBusinessEntitySourceDocumentTypeRepository _repository;
-        private ICollectionViewModelFactory<BusinessEntitySourceDocumentType> _businessEntitySourceDocumentTypeCollectionViewModelFactory;
+        private readonly IBusinessEntitySourceDocumentTypeRepository _repository;
+        private readonly ICollectionViewModelFactory<BusinessEntitySourceDocumentType> _businessEntitySourceDocumentTypeCollectionViewModelFactory;
 
         public BusinessEntitySourceDocumentTypeChildCollectionViewModelFactory(
             IRepository<BusinessEntitySourceDocumentType> repository,
@@ -30,6 +29,7 @@ namespace AccountsViewModel.Factories.Unity.CollectionViewModelFactories
                 var collection = _repository.GetBusinessEntitySourceDocumentTypesForBusinessEntity(entity);
                 entity.BusinessEntitySourceDocumentTypes = collection;
             }
+
             return _businessEntitySourceDocumentTypeCollectionViewModelFactory
                 .CreateNewCollectionViewModel(entity.BusinessEntitySourceDocumentTypes);
         }

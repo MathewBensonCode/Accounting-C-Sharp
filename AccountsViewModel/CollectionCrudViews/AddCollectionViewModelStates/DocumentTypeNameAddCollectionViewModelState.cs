@@ -1,10 +1,10 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.AddCollectionViewModelStates
 {
     public class DocumentTypeNameAddCollectionViewModelState :
         AddNewEntityToCollectionViewModelState<DocumentTypeName>, ICollectionAddViewModelState<DocumentTypeName>

@@ -1,4 +1,4 @@
-﻿namespace AccountsViewModelsCore.Services.Interfaces
+﻿namespace ImageServices.Services.Interfaces
 {
     public interface ICreateImageService
     {

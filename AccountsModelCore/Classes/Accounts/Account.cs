@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using AccountLib.Interfaces;
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Model.Transactions;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces;
+using AccountsModelCore.Interfaces.Accounts;
 
-namespace AccountLib.Model.Accounts
+namespace AccountsModelCore.Classes.Accounts
 {
     public abstract class Account : IAccount, IDbModel
     {

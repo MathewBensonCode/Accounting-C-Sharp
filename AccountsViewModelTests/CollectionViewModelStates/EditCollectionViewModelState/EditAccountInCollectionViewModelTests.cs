@@ -1,4 +1,4 @@
-﻿using AccountLib.Model.Accounts;
+﻿using AccountsModelCore.Classes.Accounts;
 
 namespace AccountsViewModelTests.CollectionViewModelStates.EditCollectionViewModelState
 {

@@ -1,13 +1,11 @@
-﻿using AccountLib.Model.Transactions;
-using System;
-using AccountsViewModel.EntityViewModels;
-using AccountsViewModel.Factories.Interfaces;
-using AccountsViewModel.Factories.Unity.ViewModelFactories;
-using Xunit;
+﻿using System.Collections.Generic;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.EntityViewModels.Classes.Transactions;
-using Moq;
-using System.Collections.Generic;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Factories.Unity.ViewModelFactories;
+using Moq;
+using Xunit;
 
 namespace AccountsViewModelTests.Factories.Tests.UnityViewModelTests
 {

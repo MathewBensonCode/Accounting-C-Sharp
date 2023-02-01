@@ -1,6 +1,6 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model.Source_Documents;
+﻿using AccountsModelCore.Classes;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.CollectionViewModels
 {
@@ -8,7 +8,7 @@ namespace AccountsViewModel.CollectionViewModels
         EntityCollectionViewModel<BusinessEntitySourceDocumentType>
     {
         public BusinessEntitySourceDocumentTypeCollectionViewModel(
-            IRepository<BusinessEntitySourceDocumentType> repository, 
+            IRepository<BusinessEntitySourceDocumentType> repository,
             ICollectionCrudListViewStateFactory<BusinessEntitySourceDocumentType> viewstatefactory
             ) : base(repository, viewstatefactory)
         {

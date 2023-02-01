@@ -1,5 +1,5 @@
 ﻿using AccountLib.Model.BusinessEntities;
-using AccountLib.Model.Source_Documents;
+using AccountsModelCore.Classes;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 
 namespace AccountsViewModel.EntityViewModels.Interfaces

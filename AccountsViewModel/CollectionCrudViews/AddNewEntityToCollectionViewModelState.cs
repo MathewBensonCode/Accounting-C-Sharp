@@ -1,7 +1,7 @@
-using Accounts.Repositories;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.CollectionCrudViews
 {

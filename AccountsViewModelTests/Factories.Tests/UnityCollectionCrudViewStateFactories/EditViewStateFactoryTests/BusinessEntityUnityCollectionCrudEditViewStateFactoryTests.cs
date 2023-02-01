@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.BusinessEntities;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.EditViewStateFactories
-{ 
-    public class BusinessEntityUnityCollectionCrudEditViewStateFactoryTests:
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.EditViewStateFactoryTests
+{
+    public class BusinessEntityUnityCollectionCrudEditViewStateFactoryTests :
         UnityCollectionCrudEditViewStateFactoryTests<BusinessEntity>
     {
     }

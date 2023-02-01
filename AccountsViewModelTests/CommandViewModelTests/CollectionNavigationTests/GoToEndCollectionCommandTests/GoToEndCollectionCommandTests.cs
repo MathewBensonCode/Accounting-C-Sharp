@@ -1,10 +1,10 @@
-﻿using Accounts.Repositories;
-using AutoFixture.Xunit2;
-using Moq;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CommandViewModels.NavigationCommands;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModel.Repositories.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
 using Xunit;
 
 namespace AccountsViewModelTests.CommandViewModelTests.CollectionNavigationTests.GoToEndCollectionCommandTests

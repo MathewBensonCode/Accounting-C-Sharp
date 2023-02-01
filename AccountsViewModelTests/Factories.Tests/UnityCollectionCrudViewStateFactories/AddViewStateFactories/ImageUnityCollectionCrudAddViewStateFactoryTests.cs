@@ -1,8 +1,8 @@
 ﻿using AccountsModelCore.Classes.DocumentImages;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.AddViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.AddViewStateFactories
 {
-    public class ImageUnityCollectionCrudAddViewStateFactoryTests:
+    public class ImageUnityCollectionCrudAddViewStateFactoryTests :
         UnityCollectionCrudAddViewStateFactoryTests<DocumentImage>
     {
     }

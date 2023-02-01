@@ -1,12 +1,12 @@
-using AccountLib.Model.Transactions;
-using Accounts.Repositories;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
-using AccountsViewModel.CollectionCrudViews.Interfaces.AddViewModelStateIInterfaces;
+using AccountsViewModel.CollectionCrudViews.Interfaces.EditViewModelStateInterfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.EditCollectionViewModelStates
 {
     public class TransactionEditCollectionViewModelState
         : TransactionAddEditCollectionViewModelState, ITransactionCollectionEditViewModelState
@@ -24,7 +24,7 @@ namespace AccountsViewModel.CollectionCrudViews
 
         protected override void CreateSaveCommand()
         {
-            SaveCommand = CommandFactory.CreateSaveEditCommand(this as ICollectionEditViewModelState<Transaction>, ListViewModelState, Repository, CollectionViewModel);
+            SaveCommand = CommandFactory.CreateSaveEditCommand(this, ListViewModelState, Repository, CollectionViewModel);
         }
     }
 }

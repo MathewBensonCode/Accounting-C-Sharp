@@ -1,40 +1,39 @@
-﻿using AutoFixture.Xunit2;
-using Moq;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.CommandViewModels.CollectionCommands;
+using Moq;
 using Xunit;
 
 namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests
 {
     public abstract class CancelAddNewEntityToCollectionCommandTests<T> where T : class
     {
-        Mock<IEntityCollectionViewModel<T>> collectionViewModel { get; set; }
-        Mock<ICollectionListViewModelState<T>> listViewState { get; set; }
-        protected CancelAddNewAndEditCommand<T> sut { get; set; }
+        private Mock<IEntityCollectionViewModel<T>> CollectionViewModel { get; set; }
+        private Mock<ICollectionListViewModelState<T>> ListViewState { get; set; }
+        protected CancelAddNewAndEditCommand<T> Sut { get; set; }
 
         public CancelAddNewEntityToCollectionCommandTests()
         {
-            collectionViewModel = new Mock<IEntityCollectionViewModel<T>>();
-            listViewState = new Mock<ICollectionListViewModelState<T>>();
-            sut = new CancelAddNewAndEditCommand<T>(
-                collectionViewModel.Object,
-                listViewState.Object
+            CollectionViewModel = new Mock<IEntityCollectionViewModel<T>>();
+            ListViewState = new Mock<ICollectionListViewModelState<T>>();
+            Sut = new CancelAddNewAndEditCommand<T>(
+                CollectionViewModel.Object,
+                ListViewState.Object
                );
         }
 
         [Fact]
         public void ShouldBeOfTypeICommand()
         {
-            Assert.IsAssignableFrom<ICommand>(sut);
+            Assert.IsAssignableFrom<ICommand>(Sut);
         }
 
         [Fact]
         public void ShouldReturnCollectionViewModelToListState()
         {
-            sut.Execute();
-            collectionViewModel.VerifySet(a => a.CollectionViewState = listViewState.Object);
+            Sut.Execute();
+            CollectionViewModel.VerifySet(a => a.CollectionViewState = ListViewState.Object);
         }
     }
 }

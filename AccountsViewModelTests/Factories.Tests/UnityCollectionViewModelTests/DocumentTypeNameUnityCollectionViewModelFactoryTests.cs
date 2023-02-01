@@ -1,8 +1,8 @@
-﻿using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests
 {
-    public class DocumentTypeNameUnityCollectionViewModelFactoryTests:
+    public class DocumentTypeNameUnityCollectionViewModelFactoryTests :
         UnityCollectionViewModelFactoryTests<DocumentTypeName>
     {
     }

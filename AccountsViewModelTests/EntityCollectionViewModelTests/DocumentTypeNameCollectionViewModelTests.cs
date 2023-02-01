@@ -1,8 +1,8 @@
-﻿using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.EntityCollectionViewModelTests
+namespace AccountsViewModelTests.EntityCollectionViewModelTests
 {
-    public class DocumentTypeNameCollectionViewModelTests:
+    public class DocumentTypeNameCollectionViewModelTests :
         EntityCollectionViewModelTests<DocumentTypeName>
     {
     }

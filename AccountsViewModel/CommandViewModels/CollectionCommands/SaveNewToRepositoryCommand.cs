@@ -1,8 +1,7 @@
-﻿using Accounts.Repositories;
-using Prism.Commands;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Repositories.Interfaces;
+using Prism.Commands;
 
 namespace AccountsViewModel.CommandViewModels.CollectionCommands
 {
@@ -19,16 +18,15 @@ namespace AccountsViewModel.CommandViewModels.CollectionCommands
                   () =>
                   {
                       var entityvm = addViewState.EntityViewModel;
-                      repository.AddSingle(entityvm.Entity as T);
-                      var saverepository = repository as ISaveRepository;
-                      if (saverepository != null)
-                          saverepository.SaveRepository();
+                      repository.AddSingle(entityvm.Entity);
+                      var saverepository = (ISaveRepository)repository;
+                      saverepository?.SaveRepository();
                       listViewState.EntityCollection.Add(entityvm);
                       collectionViewModel.CollectionViewState = listViewState;
                   },
                   () =>
                   {
-                      return (!addViewState.EntityViewModel.HasErrors) && (addViewState.EntityViewModel.HasChanged);
+                      return (!addViewState.EntityViewModel.HasErrors) && addViewState.EntityViewModel.HasChanged;
                   }
                   )
         {

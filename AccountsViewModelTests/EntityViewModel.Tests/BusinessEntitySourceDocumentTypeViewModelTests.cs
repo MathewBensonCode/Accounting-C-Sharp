@@ -1,11 +1,11 @@
-﻿using AccountLib.Interfaces;
-using Moq;
+﻿using Moq;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 using Xunit;
-using AccountLib.Model.Source_Documents;
 using AccountsViewModel.EntityViewModels.Classes;
 using AccountsViewModel.EntityViewModels.Classes.BusinessEntitySourceDocumentTypes;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces;
 
 namespace AccountsViewModelTests.EntityViewModel.Tests
 {

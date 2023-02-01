@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Accounts;
+﻿using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectAddNewCommandTests
 {
-    public class SelectAddNewAccountCommandTests:
+    public class SelectAddNewAccountCommandTests :
         SelectAddNewCommandTests<Account>
     {
     }

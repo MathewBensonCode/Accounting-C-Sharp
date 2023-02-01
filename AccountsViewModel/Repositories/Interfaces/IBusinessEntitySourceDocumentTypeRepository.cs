@@ -1,13 +1,12 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model.Source_Documents;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AccountsModelCore.Interfaces.BusinessEntities;
+using AccountsModelCore.Classes;
 
-namespace AccountsRepositoriesCore.Interfaces
+namespace AccountsViewModel.Repositories.Interfaces
 {
-    public interface IBusinessEntitySourceDocumentTypeRepository:
+    public interface IBusinessEntitySourceDocumentTypeRepository :
         IRepository<BusinessEntitySourceDocumentType>
     {
-        ICollection<BusinessEntitySourceDocumentType> GetBusinessEntitySourceDocumentTypesForBusinessEntity(IBusinessEntity businessEntity); 
+        ICollection<BusinessEntitySourceDocumentType> GetBusinessEntitySourceDocumentTypesForBusinessEntity(IBusinessEntity businessEntity);
     }
 }

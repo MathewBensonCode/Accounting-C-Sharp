@@ -1,44 +1,26 @@
-﻿using AccountLib.Interfaces.Transactions;
-using AccountLib.Model.Accounts;
+﻿using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Interfaces.Transactions;
 using System;
 
-namespace AccountLib.Model.Transactions
+namespace AccountsModelCore.Classes.Transactions
 {
     public class AssetSaleTransaction :
         Transaction, IAssetSaleTransaction
     {
         public override Account CreditAccount
         {
-            get
-            {
-                return base.CreditAccount;
-            }
+            get => base.CreditAccount;
 
-            set
-            {
-                if (value is TradeItemAssetAccount)
-                    base.CreditAccount = value;
-
-                else
-                    throw new ArgumentException("Invalid Account type, Trade Item Asset Account Type Expected");
-            }
+            set => base.CreditAccount = value is TradeItemAssetAccount
+                    ? value
+                    : throw new ArgumentException("Invalid Account type, Trade Item Asset Account Type Expected");
         }
 
         public override Account DebitAccount
         {
-            get
-            {
-                return base.DebitAccount;
-            }
+            get => base.DebitAccount;
 
-            set
-            {
-                if (value is CurrencyAccount)
-                    base.DebitAccount = value;
-
-                else
-                    throw new ArgumentException("Invalid Account type, Currency Account Type Expected");
-            }
+            set => base.DebitAccount = value is CurrencyAccount ? value : throw new ArgumentException("Invalid Account type, Currency Account Type Expected");
         }
     }
 }

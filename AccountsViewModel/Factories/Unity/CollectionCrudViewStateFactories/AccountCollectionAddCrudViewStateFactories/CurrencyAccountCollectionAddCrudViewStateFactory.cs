@@ -1,11 +1,11 @@
-using AccountLib.Model.Accounts;
-using Accounts.Repositories;
+using AccountsModelCore.Classes.Accounts;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
 
-namespace AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories
+namespace AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories.AccountCollectionAddCrudViewStateFactories
 {
     public class CurrencyAccountAddCollectionViewModelStateFactory
         : CollectionCrudAddViewStateFactory<CurrencyAccount>, ICollectionCrudAddViewStateFactory<Account>
@@ -16,7 +16,7 @@ namespace AccountsViewModel.Factories.Unity.CollectionCrudViewStateFactories
 
         public ICollectionAddViewModelState<Account> CreateEntityAddViewState(ICollectionListViewModelState<Account> liststate, IRepository<Account> repository, IEntityCollectionViewModel<Account> collectionViewModel)
         {
-            return base.CreateEntityAddViewState(liststate as ICollectionListViewModelState<CurrencyAccount>, repository as IRepository<CurrencyAccount>, collectionViewModel as IEntityCollectionViewModel<CurrencyAccount>) as ICollectionAddViewModelState<Account>;
+            return CreateEntityAddViewState(liststate as ICollectionListViewModelState<CurrencyAccount>, repository as IRepository<CurrencyAccount>, collectionViewModel as IEntityCollectionViewModel<CurrencyAccount>) as ICollectionAddViewModelState<Account>;
         }
     }
 }

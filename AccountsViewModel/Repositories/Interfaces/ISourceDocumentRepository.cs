@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using AccountLib.Model.BusinessEntities;
 using AccountLib.Model.SourceDocuments;
 
-namespace Accounts.Repositories
+namespace AccountsViewModel.Repositories.Interfaces
 {
     public interface ISourceDocumentRepository : IRepository<SourceDocument>
     {

@@ -5,6 +5,6 @@ namespace AccountLib.Model.BusinessEntities
 {
     public class RegisteredBusiness : BusinessEntity, IRegisteredBusiness
     {
-         public ICollection<BusinessEntity> RegisteredOwners {get; set;}
+        public ICollection<BusinessEntity> RegisteredOwners { get; set; }
     }
 }

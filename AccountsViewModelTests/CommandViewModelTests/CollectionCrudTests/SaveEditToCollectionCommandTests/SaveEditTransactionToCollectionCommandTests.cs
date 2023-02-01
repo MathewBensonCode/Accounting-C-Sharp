@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Transactions;
+﻿using AccountsModelCore.Classes.Transactions;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SaveEditToCollectionCommandTests
 {
-    public class SaveEditTransactionToCollectionCommandTests:
+    public class SaveEditTransactionToCollectionCommandTests :
         SaveEditToRepositoryCommandTests<Transaction>
     {
     }

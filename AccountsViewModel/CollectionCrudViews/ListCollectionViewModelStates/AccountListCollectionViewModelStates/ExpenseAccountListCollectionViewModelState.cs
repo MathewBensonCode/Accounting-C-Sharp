@@ -1,14 +1,14 @@
-﻿using AccountLib.Model.Accounts;
-using Accounts.Repositories;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AccountsModelCore.Classes.Accounts;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using AccountsViewModel.Services.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.ListCollectionViewModelStates.AccountListCollectionViewModelStates
 {
     public class ExpenseAccountListCollectionViewModelState
         : EntityListCollectionViewModelState<ExpenseAccount>, ICollectionListViewModelState<Account>
@@ -29,11 +29,8 @@ namespace AccountsViewModel.CollectionCrudViews
 
         IEntityViewModel<Account> ICollectionViewModelState<Account>.EntityViewModel
         {
-            get => base.EntityViewModel as IEntityViewModel<Account>;
-            set
-            {
-                base.EntityViewModel = value as IEntityViewModel<ExpenseAccount>;
-            }
+            get => EntityViewModel as IEntityViewModel<Account>;
+            set => EntityViewModel = value as IEntityViewModel<ExpenseAccount>;
         }
     }
 }

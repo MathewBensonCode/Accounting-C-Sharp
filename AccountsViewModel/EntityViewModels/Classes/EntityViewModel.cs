@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using AccountLib.Interfaces;
+using AccountsModelCore.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using Prism.Mvvm;
 
 namespace AccountsViewModel.EntityViewModels.Classes

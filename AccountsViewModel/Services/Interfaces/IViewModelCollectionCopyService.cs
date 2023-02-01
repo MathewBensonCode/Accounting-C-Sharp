@@ -3,7 +3,7 @@
 namespace AccountsViewModel.Services.Interfaces
 {
     public interface IViewModelCollectionCopyService<T>
-        where T:class
+        where T : class
     {
         void CopyCollection(IEntityCollectionViewModel<T> copyfrom, IEntityCollectionViewModel<T> copyto);
     }

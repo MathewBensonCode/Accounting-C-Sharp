@@ -1,20 +1,20 @@
-using Xunit;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
-using AccountsViewModel.Factories.Unity.CommandViewModelFactories;
+using System.Windows.Input;
+using AccountsViewModel.CommandViewModels.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Factories.Unity.CommandViewModelFactories;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
 using Moq;
 using Unity;
-using AutoFixture.Xunit2;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using System.Windows.Input;
 using Unity.Resolution;
-using AccountsViewModel.EntityViewModels.Interfaces;
+using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCommandViewModelFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCommandViewModelFactoryTests
 {
     public class DocumentImageViewModelCommandFactoryTests
     {
-        Mock<IDocumentImageViewModel> imageviewmodel;
+        private readonly Mock<IDocumentImageViewModel> imageviewmodel;
 
         public DocumentImageViewModelCommandFactoryTests()
         {

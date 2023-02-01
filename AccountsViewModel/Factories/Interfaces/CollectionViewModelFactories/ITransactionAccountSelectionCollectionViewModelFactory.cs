@@ -1,6 +1,4 @@
-﻿using AccountLib.Model.Accounts;
-using AccountLib.Interfaces.Transactions;
-using AccountsViewModel.CollectionViewModels.Interfaces;
+﻿using AccountsModelCore.Interfaces.Transactions;
 
 namespace AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories
 {

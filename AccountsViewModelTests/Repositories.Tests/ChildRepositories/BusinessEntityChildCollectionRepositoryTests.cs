@@ -1,9 +1,9 @@
 ﻿using AccountLib.Model.BusinessEntities;
 
-namespace AccountsViewModel.Xunit.Tests.Repositories.Tests
+namespace AccountsViewModelTests.Repositories.Tests.ChildRepositories
 {
     public class BusinessEntityChildCollectionRepositoryTests
-        :ChildCollectionRepositoryTests<BusinessEntity>
+        : ChildCollectionRepositoryTests<BusinessEntity>
     {
     }
 }

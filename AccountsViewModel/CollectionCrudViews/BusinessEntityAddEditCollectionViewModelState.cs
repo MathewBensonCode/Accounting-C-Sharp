@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using AccountLib.Model;
 using AccountLib.Model.BusinessEntities;
-using Accounts.Repositories;
+using AccountsModelCore.Classes;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.CollectionCrudViews
 {

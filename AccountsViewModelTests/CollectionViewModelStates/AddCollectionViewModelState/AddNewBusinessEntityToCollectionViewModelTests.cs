@@ -1,11 +1,12 @@
 ﻿using AccountLib.Model.BusinessEntities;
-using Moq;
 using AccountsViewModel.CollectionCrudViews;
+using AccountsViewModel.CollectionCrudViews.AddCollectionViewModelStates;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
-using Xunit;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.CommandViewModels.Interfaces;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using Moq;
 using Prism.Commands;
+using Xunit;
 
 namespace AccountsViewModelTests.CollectionViewModelStates.AddCollectionViewModelState
 {

@@ -1,8 +1,8 @@
-﻿using AccountLib.Model;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityRepositoryFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityRepositoryFactoryTests
 {
-    public class UnityDocumentTypeNameRepositoryFactoryTests:
+    public class UnityDocumentTypeNameRepositoryFactoryTests :
         UnityRepositoryFactoryTests<DocumentTypeName>
     {
     }

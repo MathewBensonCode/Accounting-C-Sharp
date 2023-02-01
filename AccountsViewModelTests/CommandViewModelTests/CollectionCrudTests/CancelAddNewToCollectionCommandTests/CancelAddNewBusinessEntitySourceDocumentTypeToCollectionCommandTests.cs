@@ -1,9 +1,8 @@
-﻿using AccountLib.Model.Source_Documents;
-using AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests;
+﻿using AccountsModelCore.Classes;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.CancelAddNewToCollectionCommandTests
 {
-    public class CancelAddNewBusinessEntitySourceDocumentTypeToCollectionCommandTests:
+    public class CancelAddNewBusinessEntitySourceDocumentTypeToCollectionCommandTests :
         CancelAddNewEntityToCollectionCommandTests<BusinessEntitySourceDocumentType>
     {
     }

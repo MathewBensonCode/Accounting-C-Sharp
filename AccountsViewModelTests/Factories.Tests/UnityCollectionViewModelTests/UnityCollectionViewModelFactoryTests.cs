@@ -1,12 +1,12 @@
-﻿using AutoFixture.Xunit2;
-using Moq;
-using AccountsViewModel.CollectionViewModels.Interfaces;
+﻿using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Unity.CollectionViewModelFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
 using Unity;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests
 {
     public abstract class UnityCollectionViewModelFactoryTests<T>
         where T : class
@@ -14,7 +14,7 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
         [Theory, AutoCatalogData]
         public void ShouldCreateNewCollectionViewModelUsingUnityContainer(
              Mock<IEntityCollectionViewModel<T>> collection,
-            [Frozen]Mock<IUnityContainer> container,
+            [Frozen] Mock<IUnityContainer> container,
             UnityCollectionViewModelFactory<T> sut
             )
         {
@@ -22,18 +22,5 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
             Assert.IsAssignableFrom<IEntityCollectionViewModel<T>>(sut.CreateNewCollectionViewModel());
         }
 
-      
-
-       
-
-
-
-        
-
-      
-
-       
-
-        
     }
 }

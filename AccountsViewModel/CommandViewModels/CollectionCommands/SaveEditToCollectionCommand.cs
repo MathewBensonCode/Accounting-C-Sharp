@@ -1,9 +1,8 @@
-﻿using Accounts.Repositories;
-using Prism.Commands;
-using AccountsViewModel.CollectionCrudViews.Interfaces;
+﻿using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Repositories.Interfaces;
 using AccountsViewModel.Services.Interfaces;
+using Prism.Commands;
 
 namespace AccountsViewModel.CommandViewModels.CollectionCommands
 {
@@ -17,14 +16,13 @@ namespace AccountsViewModel.CommandViewModels.CollectionCommands
             IViewModelCopyService<T> copyService,
             IEntityCollectionViewModel<T> collectionViewModel,
             IRepository<T> repository
-            ) 
+            )
             : base(
-                  ()=>
+                  () =>
                   {
                       copyService.CopyEntityViewModel(editViewState.EntityViewModel, listViewState.EntityViewModel);
                       var saverepository = repository as ISaveRepository;
-                      if (saverepository!=null)
-                          saverepository.SaveRepository();
+                      saverepository?.SaveRepository();
                       collectionViewModel.CollectionViewState = listViewState;
                   }
                   )

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using AccountLib.Model.Source_Documents;
-using AccountLib.Interfaces;
+using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
 

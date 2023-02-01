@@ -1,9 +1,9 @@
-﻿using AccountLib.Model.BusinessEntities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AccountLib.Model.BusinessEntities;
 
-namespace Accounts.Repositories
+namespace AccountsViewModel.Repositories.Interfaces
 {
-    public interface IBusinessEntityRepository:IRepository<BusinessEntity>
+    public interface IBusinessEntityRepository : IRepository<BusinessEntity>
     {
         IEnumerable<BusinessEntity> GetPersonBusinessEntityAccounts();
         IEnumerable<BusinessEntity> GetRegisteredBusinessEntityAccounts();

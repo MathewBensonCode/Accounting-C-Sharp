@@ -1,7 +1,6 @@
 ﻿using AccountLib.Model.BusinessEntities;
 using AccountsModelCore.Interfaces.BusinessEntities;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.Factories.Interfaces.ColectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 
 namespace AccountsViewModel.Factories.Unity.CollectionViewModelFactories

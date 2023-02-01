@@ -1,44 +1,24 @@
 ﻿using System;
-using AccountLib.Interfaces.Transactions;
-using AccountLib.Model.Accounts;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Interfaces.Transactions;
 
-namespace AccountLib.Model.Transactions
+namespace AccountsModelCore.Classes.Transactions
 {
     public class IncomeTransaction :
         Transaction, IIncomeTransaction
     {
         public override Account DebitAccount
         {
-            get
-            {
-                return base.DebitAccount;
-            }
+            get => base.DebitAccount;
 
-            set
-            {
-                if (value is CurrencyAccount)
-                    base.DebitAccount = value;
-
-                else
-                    throw new ArgumentException("Invalid Account Type, Currency Account Expected");
-            }
+            set => base.DebitAccount = value is CurrencyAccount ? value : throw new ArgumentException("Invalid Account Type, Currency Account Expected");
         }
 
         public override Account CreditAccount
         {
-            get
-            {
-                return base.CreditAccount;
-            }
+            get => base.CreditAccount;
 
-            set
-            {
-                if (value is IncomeAccount)
-                    base.CreditAccount = value;
-
-                else
-                    throw new ArgumentException("Invalid Account Type, Income Account Expected");
-            }
+            set => base.CreditAccount = value is IncomeAccount ? value : throw new ArgumentException("Invalid Account Type, Income Account Expected");
         }
     }
 }

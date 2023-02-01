@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
-using AccountsViewModel.CommandViewModels.CollectionCommands;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels;
+using AccountsViewModel.CommandViewModels.Interfaces;
 using Moq;
 using Xunit;
 
@@ -8,8 +8,9 @@ namespace AccountsViewModelTests.CommandViewModelTests
 {
     public class CommandViewModelTests
     {
-        CommandViewModel sut;
-        Mock<ICommand> command;
+        private readonly CommandViewModel sut;
+        private readonly Mock<ICommand> command;
+
         public CommandViewModelTests()
         {
             command = new Mock<ICommand>();
@@ -28,7 +29,6 @@ namespace AccountsViewModelTests.CommandViewModelTests
         {
             Assert.IsType<string>(sut.CommandName);
         }
-
 
         [Fact]
         public void ShouldHaveAnICommandProperty()

@@ -1,9 +1,8 @@
-using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.EntityViewModels;
 
-namespace AccountsViewModel.Entity.Interfaces
+namespace AccountsViewModel.EntityViewModels.Interfaces
 {
     public interface IAccountViewModel
         : IEntityViewModel<Account>

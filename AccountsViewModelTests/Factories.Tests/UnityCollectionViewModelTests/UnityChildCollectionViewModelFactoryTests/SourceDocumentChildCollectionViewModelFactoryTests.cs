@@ -1,22 +1,15 @@
-﻿using AccountLib.Model.SourceDocuments;
-using Accounts.Repositories;
-using AutoFixture.Xunit2;
-using Moq;
-using System.Collections.Generic;
-using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
+﻿using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Unity.CollectionViewModelFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
-using Unity;
+using AccountsViewModelTests.AutofixtureAttributes;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
 {
     public class SourceDocumentChildCollectionViewModelFactoryTests
     {
         [Theory, AutoCatalogData]
         public void ShouldBeOfTypeISourceDocumentChildCollectionViewModelFactory(
-            
+
             SourceDocumentChildCollectionViewModelFactory sut
             )
         {
@@ -40,9 +33,6 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModel
 
         //    Assert.Equal(sourcedocumentchildcollectionvm.Object, sut.CreateSourceDocumentCollectionViewModelFromBusinessEntity(businessentity.Object));
         //}
-
-       
-
 
     }
 }

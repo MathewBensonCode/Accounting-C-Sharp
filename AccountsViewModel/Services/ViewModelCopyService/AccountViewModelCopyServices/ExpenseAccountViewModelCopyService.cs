@@ -1,16 +1,15 @@
-
-using AccountLib.Model.Accounts;
-using AccountsViewModel.EntityViewModels;
+using AccountsModelCore.Classes.Accounts;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Services.Interfaces;
 
-namespace AccountsViewModel.Services.ViewModelCopyService
+namespace AccountsViewModel.Services.ViewModelCopyService.AccountViewModelCopyServices
 {
     public class ExpenseAccountViewModelCopyService
         : AccountViewModelCopyService, IViewModelCopyService<ExpenseAccount>
     {
         public void CopyEntityViewModel(IEntityViewModel<ExpenseAccount> copyfrom, IEntityViewModel<ExpenseAccount> copyto)
         {
-            base.CopyEntityViewModel(copyfrom as IEntityViewModel<Account>, copyto as IEntityViewModel<Account>);
+            CopyEntityViewModel(copyfrom as IEntityViewModel<Account>, copyto as IEntityViewModel<Account>);
         }
     }
 }

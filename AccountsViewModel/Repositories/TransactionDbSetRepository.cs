@@ -1,12 +1,10 @@
-using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
-using Accounts.Repositories;
-using AccountsEntityFrameworkCore;
-using AccountLib.Interfaces;
-using AccountLib.Interfaces.Accounts;
-using AccountLib.Interfaces.SourceDocuments;
 using System.Collections.Generic;
 using System.Linq;
+using AccountsEntityFrameworkCore;
+using AccountsModelCore.Classes.Transactions;
+using AccountsModelCore.Interfaces.Accounts;
+using AccountsModelCore.Interfaces.SourceDocuments;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.Repositories
 {
@@ -18,17 +16,11 @@ namespace AccountsViewModel.Repositories
         {
         }
 
-        public AccountsDbContext AccountsDbContext
-        {
-            get
-            {
-                return _context as AccountsDbContext;
-            }
-        }
+        public AccountsDbContext AccountsDbContext => _context;
 
         public ICollection<Transaction> GetTransactionsForSourceDocument(ISourceDocument sourceDocument)
         {
-            return AccountsDbContext.Transactions.Where(trans => trans.SourceDocumentId == (sourceDocument as IDbModel).Id).ToList();
+            return AccountsDbContext.Transactions.Where(trans => trans.SourceDocumentId == sourceDocument.Id).ToList();
         }
 
         public IEnumerable<Transaction> GetAssetPurchaseTransactions()
@@ -73,14 +65,13 @@ namespace AccountsViewModel.Repositories
 
         public ICollection<Transaction> GetDebitTransactionsForAccount(IAccount account)
         {
-            return AccountsDbContext.Transactions.Where(t => t.DebitAccountId == (account as IDbModel).Id).ToList();
+            return AccountsDbContext.Transactions.Where(t => t.DebitAccountId == account.Id).ToList();
         }
 
         public ICollection<Transaction> GetCreditTransactionsForAccount(IAccount account)
         {
-            return AccountsDbContext.Transactions.Where(t => t.CreditAccountId == (account as IDbModel).Id).ToList();
+            return AccountsDbContext.Transactions.Where(t => t.CreditAccountId == account.Id).ToList();
         }
     }
 }
-
 

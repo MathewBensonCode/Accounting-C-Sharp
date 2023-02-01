@@ -1,14 +1,13 @@
-﻿using Accounts.Repositories;
-using AccountLib.Model;
-using AccountLib.Model.Source_Documents;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using AccountsModelCore.Classes;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.AddCollectionViewModelStates
 {
     public class BusinessEntitySourceDocumentTypeAddCollectionViewModelState :
         AddNewEntityToCollectionViewModelState<BusinessEntitySourceDocumentType>, ICollectionAddViewModelState<BusinessEntitySourceDocumentType>

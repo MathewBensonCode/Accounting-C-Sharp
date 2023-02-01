@@ -1,8 +1,8 @@
 ﻿using AccountLib.Model.SourceDocuments;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.EditViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.EditViewStateFactoryTests
 {
-    public class SourceDocumentUnityCollectionEditViewStateFactoryTests:
+    public class SourceDocumentUnityCollectionEditViewStateFactoryTests :
         UnityCollectionCrudEditViewStateFactoryTests<SourceDocument>
     {
     }

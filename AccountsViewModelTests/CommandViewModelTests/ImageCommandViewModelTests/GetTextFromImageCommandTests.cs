@@ -1,11 +1,11 @@
 using System.Windows.Input;
 using AccountsViewModel.CommandViewModels.ImageCommands;
-using Xunit;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
-using AutoFixture.Xunit2;
-using Moq;
-using AccountsViewModelsCore.Services.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using ImageServices.Services.Interfaces;
+using Moq;
+using Xunit;
 
 namespace AccountsViewModelTests.CommandViewModelTests.ImageCommandViewModelTests
 {

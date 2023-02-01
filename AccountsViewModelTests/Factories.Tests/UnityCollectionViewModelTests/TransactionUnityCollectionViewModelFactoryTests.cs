@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Transactions;
+﻿using AccountsModelCore.Classes.Transactions;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests
 {
-    public class TransactionUnityCollectionViewModelFactoryTests:
+    public class TransactionUnityCollectionViewModelFactoryTests :
         UnityCollectionViewModelFactoryTests<Transaction>
     {
     }

@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using Accounts.Repositories;
 using AccountsModelCore.Classes.DocumentImages;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.EntityViewModels;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using AccountsViewModel.Services.Interfaces;
 
-namespace AccountsViewModel.CollectionCrudViews
+namespace AccountsViewModel.CollectionCrudViews.ListCollectionViewModelStates
 {
     public class ImageListCollectionViewModelState
         : EntityListCollectionViewModelState<DocumentImage>

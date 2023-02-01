@@ -1,5 +1,4 @@
-﻿using AccountLib.Model.Accounts;
-using AccountsViewModel.Xunit.Tests.CollectionCrudViewModel.Tests;
+﻿using AccountsModelCore.Classes.Accounts;
 
 namespace AccountsViewModelTests.CollectionViewModelStates.AddCollectionViewModelState
 {

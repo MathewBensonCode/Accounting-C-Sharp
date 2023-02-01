@@ -1,8 +1,8 @@
-﻿using AccountLib.Model.Transactions;
+﻿using AccountsModelCore.Classes.Transactions;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.EditViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.EditViewStateFactoryTests
 {
-    public class TransactionUnityCollectionEditViewStateFactoryTests:
+    public class TransactionUnityCollectionEditViewStateFactoryTests :
         UnityCollectionCrudEditViewStateFactoryTests<Transaction>
     {
     }

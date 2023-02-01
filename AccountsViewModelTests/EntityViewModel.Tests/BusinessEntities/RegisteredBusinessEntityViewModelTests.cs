@@ -1,11 +1,11 @@
 using Xunit;
 using Moq;
-using AccountsViewModel.Factories.Interfaces.ColectionViewModelFactories;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountLib.Model.BusinessEntities;
 using AccountsViewModel.EntityViewModels.Classes.BusinessEntities;
 using AccountsViewModel.EntityViewModels.Classes;
 using AccountsModelCore.Interfaces.BusinessEntities;
+using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 
 namespace AccountsViewModelTests.EntityViewModel.Tests.BusinessEntities
 {

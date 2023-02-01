@@ -1,7 +1,7 @@
 ﻿using AccountLib.Model.BusinessEntities;
 using AccountLib.Model.SourceDocuments;
 using AccountsViewModel.CollectionViewModels.Interfaces;
-using AccountsViewModel.CommandViewModels.CollectionCommands.Interfaces;
+using AccountsViewModel.CommandViewModels.Interfaces;
 
 namespace AccountsViewModel.CollectionCrudViews.Interfaces
 {

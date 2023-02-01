@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
-using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
-using Accounts.Repositories;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Interfaces.CommandViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.CollectionCrudViews
 {

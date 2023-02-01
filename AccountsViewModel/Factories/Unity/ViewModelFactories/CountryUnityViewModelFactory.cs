@@ -1,16 +1,16 @@
-﻿using AccountLib.Model;
-using Accounts.Repositories;
+﻿using AccountsModelCore.Classes;
+using AccountsModelCore.Interfaces.BusinessEntities;
 using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
 using Unity;
-using AccountsModelCore.Interfaces.BusinessEntities;
 
 namespace AccountsViewModel.Factories.Unity.ViewModelFactories
 {
     public class CountryUnityViewModelFactory :
         UnityViewModelFactory<Country>, ICountryViewModelFactory
     {
-        IRepository<Country> _repository;
+        private readonly IRepository<Country> _repository;
 
         public CountryUnityViewModelFactory(IRepository<Country> repository, IUnityContainer container) : base(container)
         {
@@ -21,7 +21,7 @@ namespace AccountsViewModel.Factories.Unity.ViewModelFactories
         {
             var country = _repository.Find(businessEntity.CountryId);
             return CreateViewModelFromEntity(country) as ICountryViewModel;
-         }
+        }
     }
 
 }

@@ -1,6 +1,6 @@
-﻿using AccountLib.Model;
-using AccountsViewModel.EntityViewModels.Interfaces;
+﻿using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsModelCore.Interfaces.BusinessEntities;
+using AccountsModelCore.Classes;
 
 namespace AccountsViewModel.Factories.Interfaces.ViewModelFactories
 {

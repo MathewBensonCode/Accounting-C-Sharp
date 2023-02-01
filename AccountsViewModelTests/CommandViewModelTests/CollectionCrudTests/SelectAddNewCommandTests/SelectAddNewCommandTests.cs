@@ -1,17 +1,17 @@
-﻿using AutoFixture.Xunit2;
-using Moq;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using AccountsViewModel.CollectionCrudViews.Interfaces;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.CommandViewModels.CollectionCommands;
-using AccountsViewModel.EntityViewModels;
-using AccountsViewModel.Factories.Interfaces;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModel.EntityViewModels.Interfaces;
+using AccountsViewModel.Factories.Interfaces.ViewModelFactories;
+using AccountsViewModelTests.AutofixtureAttributes;
+using AutoFixture.Xunit2;
+using Moq;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTests
+namespace AccountsViewModelTests.CommandViewModelTests.CollectionCrudTests.SelectAddNewCommandTests
 {
-    abstract public class SelectAddNewCommandTests<T> where T:class
+    public abstract class SelectAddNewCommandTests<T> where T : class
     {
         [Theory, AutoCatalogData]
         public void ShouldImplementICommandInterface(
@@ -23,8 +23,8 @@ namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTest
 
         [Theory, AutoCatalogData]
         public void ShouldSetAddViewToCollectionViewModel(
-            [Frozen]Mock<IEntityCollectionViewModel<T>> collectionViewModel,
-            [Frozen]Mock<ICollectionAddViewModelState<T>> addviewmodelstate,
+            [Frozen] Mock<IEntityCollectionViewModel<T>> collectionViewModel,
+            [Frozen] Mock<ICollectionAddViewModelState<T>> addviewmodelstate,
             SelectAddViewCommand<T> sut
             )
         {
@@ -34,9 +34,9 @@ namespace AccountsViewModel.Xunit.Tests.CommandViewModelTests.CollectionCrudTest
 
         [Theory, AutoCatalogData]
         public void ShouldAddNewEntityToAddViewModel(
-            [Frozen]Mock<IEntityViewModel<T>> entityvm,
-            [Frozen]Mock<ICollectionAddViewModelState<T>> addViewModelState,
-            [Frozen]Mock<IViewModelFactory<T>> viewModelFactory,
+            [Frozen] Mock<IEntityViewModel<T>> entityvm,
+            [Frozen] Mock<ICollectionAddViewModelState<T>> addViewModelState,
+            [Frozen] Mock<IViewModelFactory<T>> viewModelFactory,
             SelectAddViewCommand<T> sut
             )
         {

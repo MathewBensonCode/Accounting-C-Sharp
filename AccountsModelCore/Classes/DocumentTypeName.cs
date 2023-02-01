@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using AccountLib.Interfaces;
-using AccountLib.Model.Source_Documents;
+using AccountsModelCore.Interfaces;
 
-namespace AccountLib.Model
+namespace AccountsModelCore.Classes
 {
     public class DocumentTypeName :
         IDocumentTypeName

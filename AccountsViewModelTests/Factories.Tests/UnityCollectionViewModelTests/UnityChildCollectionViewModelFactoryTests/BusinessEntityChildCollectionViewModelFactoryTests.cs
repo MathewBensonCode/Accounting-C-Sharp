@@ -1,9 +1,9 @@
-﻿using AccountsViewModel.Factories.Interfaces.ColectionViewModelFactories;
+﻿using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Unity.CollectionViewModelFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModelTests.AutofixtureAttributes;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
 {
     public class BusinessEntityChildCollectionViewModelFactoryTests
     {

@@ -1,8 +1,8 @@
-﻿using AccountsViewModel.EntityViewModels;
+﻿using AccountsViewModel.EntityViewModels.Interfaces;
 
-namespace AccountsViewModel.Factories.Interfaces
+namespace AccountsViewModel.Factories.Interfaces.ViewModelFactories
 {
-    public interface IViewModelFactory<T> where T:class
+    public interface IViewModelFactory<T> where T : class
     {
         IEntityViewModel<T> CreateViewModelFromEntity(T entity);
         IEntityViewModel<T> CreateViewModelForNewEntity();

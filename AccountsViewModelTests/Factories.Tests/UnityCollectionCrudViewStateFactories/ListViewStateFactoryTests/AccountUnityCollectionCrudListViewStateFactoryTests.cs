@@ -1,13 +1,13 @@
-﻿using AccountLib.Model.Accounts;
+﻿using AccountsModelCore.Classes.Accounts;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewStateFactories.ListViewStateFactories
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionCrudViewStateFactories.ListViewStateFactoryTests
 {
-    public class AccountUnityCollectionCrudListViewStateFactoryTests:
+    public class AccountUnityCollectionCrudListViewStateFactoryTests :
         UnityCollectionCrudListViewStateFactoryTests<Account>
     {
     }
 
-    public class AssetAccountUnityCollectionCrudListViewStateFactoryTests:
+    public class AssetAccountUnityCollectionCrudListViewStateFactoryTests :
         AccountUnityCollectionCrudListViewStateFactoryTests
     {
 
@@ -48,6 +48,5 @@ namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionCrudViewS
     {
 
     }
-
 
 }

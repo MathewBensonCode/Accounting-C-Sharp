@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Accounts.Repositories;
 using AccountsEntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 using AccountsViewModel.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace AccountsViewModel.Repositories
 {

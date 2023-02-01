@@ -1,6 +1,6 @@
-using AccountLib.Model.Transactions;
-using Accounts.Repositories;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.Factories.Interfaces.CollectionCrudViewStateFactories;
+using AccountsViewModel.Repositories.Interfaces;
 
 namespace AccountsViewModel.CollectionViewModels
 {

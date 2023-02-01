@@ -1,14 +1,14 @@
-﻿using AccountLib.Model.Accounts;
-using AccountLib.Model.Transactions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AccountsModelCore.Classes.Accounts;
+using AccountsModelCore.Classes.Transactions;
 using AccountsViewModel.Factories.Interfaces.TransactionAccountSelectionLists;
 using AccountsViewModel.Factories.TransactionAccountSelectionListFactories;
-using AccountsViewModel.Xunit.Tests.autofixtureattributes;
+using AccountsViewModelTests.AutofixtureAttributes;
 using Xunit;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.TransactionAccountSelectionListsFactories
+namespace AccountsViewModelTests.Factories.Tests.TransactionAccountSelectionListsFactories
 {
-    public abstract class TransactionAccountSelectionListFactoryTests<T> where T:Transaction
+    public abstract class TransactionAccountSelectionListFactoryTests<T> where T : Transaction
     {
         [Theory, AutoCatalogData]
         public void ShouldImplementITransactionAccountSelection(

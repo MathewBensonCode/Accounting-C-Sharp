@@ -1,6 +1,5 @@
-﻿using AccountLib.Model.Accounts;
-using AccountsViewModel.Entity.Interfaces;
-using AccountsViewModel.EntityViewModels;
+﻿using AccountsModelCore.Classes.Accounts;
+using AccountsViewModel.EntityViewModels.Interfaces;
 using AccountsViewModel.Services.Interfaces;
 
 namespace AccountsViewModel.Services.ViewModelCopyService

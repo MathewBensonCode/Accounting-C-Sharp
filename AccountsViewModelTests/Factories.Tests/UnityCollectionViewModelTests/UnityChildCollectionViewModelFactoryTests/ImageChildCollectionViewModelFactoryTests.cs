@@ -1,14 +1,14 @@
-﻿using Accounts.Repositories;
-using AccountLib.Interfaces.SourceDocuments;
-using Moq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AccountsModelCore.Classes.DocumentImages;
+using AccountsModelCore.Interfaces.SourceDocuments;
 using AccountsViewModel.CollectionViewModels.Interfaces;
 using AccountsViewModel.Factories.Interfaces.CollectionViewModelFactories;
 using AccountsViewModel.Factories.Unity.CollectionViewModelFactories;
+using AccountsViewModel.Repositories.Interfaces;
+using Moq;
 using Xunit;
-using AccountsModelCore.Classes.DocumentImages;
 
-namespace AccountsViewModel.Xunit.Tests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
+namespace AccountsViewModelTests.Factories.Tests.UnityCollectionViewModelTests.UnityChildCollectionViewModelFactoryTests
 {
     public class ImageChildCollectionViewModelFactoryTests
     {
